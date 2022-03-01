@@ -1,5 +1,15 @@
-<div style="width: 100%; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="map-container">
+  <div style="width: 100vw; height: 100vh;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
+  </div>
+  <%= link_to "hello word", "#", class: "btn btn-success" %>
+  <%= link_to "x", "#", class: "btn btn-light btn-circle-primary btn-profile" %>
+  <%= link_to "x", "#", class: "btn btn-light btn-circle-secondary btn-lock" %>
+  <%= link_to "x", "#", class: "btn btn-light btn-circle-secondary btn-play" %>
+  <%= link_to "x", "#", class: "btn btn-light btn-circle-secondary btn-list" %>
+  <%= link_to "x", "#", class: "btn btn-light btn-circle-primary btn-new" %>
+  <%= link_to "x", "#", class: "btn btn-light btn-circle-secondary btn-geo" %>
 </div>
