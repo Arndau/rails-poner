@@ -3,14 +3,13 @@ class MessagesController < ApplicationController
 
   def index
     @messages = policy_scope(Message)
-
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-    @markers = @flats.geocoded.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude
-      }
-    end
+    # @markers = @flats.geocoded.map do |flat|
+    #   {
+    #     lat: flat.latitude,
+    #     lng: flat.longitude
+    #   }
+    # end
   end
 
   def show
