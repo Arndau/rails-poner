@@ -6,7 +6,7 @@
 .logo-area{
   margin:auto;
   background-image: url('Fond-logo-area.png');
-  background-size: cover;
+  background-size:cover;
   min-height: 92vh;
 }
 .logo{
@@ -44,4 +44,15 @@
   height: 200px;
   object-fit: contain;
   margin-top: 90px;
+}
+
+.footer{
+  background-color: #80CDDE;
+  background-size:cover;
+  color: white;
+  font-weight: bold;
+}
+
+.fab{
+  color: white
 }
