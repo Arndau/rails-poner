@@ -1,1 +1,41 @@
 // Specific CSS for your home-page
+
+.container{
+  background-color: aqua;
+}
+.logo-area{
+  margin:auto;
+  background-image: url('Fond-logo-area.png');
+  background-size: cover;
+}
+.logo{
+  text-align: center;
+}
+.howitworks-area{
+  margin:auto;
+  background-color: red;
+}
+.login {
+  margin:auto;
+}
+form#new_user {
+  width: 200px;
+  margin: auto;
+  border: solid
+}
+.form-actions{
+  margin:auto
+}
+.btn {
+  width: 230px;
+  margin: 50px;
+  padding: 15px 15px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.1s;
+  background-size: 100% auto;
+  background-color: blueviolet;
+  color: white;
+  box-shadow: 2 3 20px rgb(112, 134, 158);
+  border-radius: 10px;
+}

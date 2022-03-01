@@ -1,2 +1,46 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container">
+  <div class ="logo-area">
+    <div class="logo"><%= image_tag "Logo-pour-effet-sautillement.png" %></div>
+    <div class="login">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" } %>
+      <%= f.input :password,
+                  required: false,
+                  input_html: { autocomplete: "current-password" } %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <div class="form-actions">
+        <%= f.button :submit, "Log in" %>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+
+    </div>
+  </div>
+  <div class="howitworks-area">
+    <%= image_tag "Description-FR-1.png" %>
+    <%= image_tag "Description-FR-2.png" %>
+    <%= image_tag "Description-FR-3.png" %>
+
+  </div>
+</div>
+<div class ="footer">
+ <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>
