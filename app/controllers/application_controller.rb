@@ -11,4 +11,9 @@ class ApplicationController < ActionController::Base
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
+
+  # redirection après login vers l'index
+  def after_sign_in_path_for(resource)
+    messages_path # your path
+  end
 end
