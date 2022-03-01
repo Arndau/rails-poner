@@ -4,4 +4,5 @@ class MessageUser < ApplicationRecord
 
   validates :unlocked, presence: true
   validates :read, presence: true
+
 end
