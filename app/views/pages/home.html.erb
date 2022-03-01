@@ -1,8 +1,7 @@
 
-<div class="container">
-  <div class ="logo-area">
-    <div class="logo"><%= image_tag "Logo-pour-effet-sautillement.png" %></div>
-    <div class="login">
+<div class ="logo-area d-flex flex-column">
+  <%= image_tag "Logo-pour-effet-sautillement.png", class: "img-logo"%>
+  <div class="login">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
       <%= f.input :email,
@@ -13,27 +12,24 @@
                   required: false,
                   input_html: { autocomplete: "current-password" } %>
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-      <div class="form-actions">
+      <div class="form-actions d-flex justify-content-center">
         <%= f.button :submit, "Log in" %>
       </div>
+      <%= render "devise/shared/links" %>
     </div>
-  </div>
-
-  <% end %>
-
-  <%= render "devise/shared/links" %>
-
-    </div>
-  </div>
-  <div class="howitworks-area">
-    <%= image_tag "Description-FR-1.png" %>
-    <%= image_tag "Description-FR-2.png" %>
-    <%= image_tag "Description-FR-3.png" %>
-
+    <% end %>
   </div>
 </div>
-<div class ="footer">
- <div class="footer-links">
+<div class="container">
+  <div class="howitworks-area d-flex flex-column">
+    <%= image_tag "Description-FR-1.png", class: "img-home" %>
+    <%= image_tag "Description-FR-2.png", class: "img-home" %>
+    <%= image_tag "Description-FR-3.png", class: "img-home" %>
+  </div>
+</div>
+
+<div class ="footer d-flex flex-column align-items-center justify-content-center py-2 px-3 border-top">
+  <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
     <a href="#"><i class="fab fa-facebook"></i></a>
@@ -41,6 +37,6 @@
     <a href="#"><i class="fab fa-linkedin"></i></a>
   </div>
   <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+    This footer is made with ❤️ at Le Wagon
   </div>
 </div>
