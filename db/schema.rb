@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_28_170546) do
+ActiveRecord::Schema.define(version: 2022_03_01_121035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "message_users", force: :cascade do |t|
-    t.boolean "unlocked"
-    t.boolean "read"
+    t.boolean "unlocked", default: false
+    t.boolean "read", default: false
     t.bigint "message_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
