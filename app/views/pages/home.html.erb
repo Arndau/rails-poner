@@ -1,3 +1,6 @@
+<div>
+<%= render 'shared/navbar' %>
+</div>
 <div class ="logo-area d-flex flex-column">
   <%= image_tag "Logo-pour-effet-sautillement.png", class: "img-logo animate__animated animate__bounce animate__infinite animate__slower"%>
   <div class="login">
@@ -43,5 +46,31 @@
   </div>
   <div class="footer-copyright">
     This footer is made with ❤️ at Le Wagon
+  </div>
+</div>
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Supprimer</button>
+        <button type="button" class="btn btn-primary">Itinéraire</button>
+      </div>
+    </div>
   </div>
 </div>

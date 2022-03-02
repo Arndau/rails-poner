@@ -1,0 +1,13 @@
+<div class="map-container">
+  <div style="width: 100vw; height: 100vh;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-user-coordinates-value="<%= @user_coordinates.to_json %>"
+    data-mapbox-message-coordinates-value="<%= @message_coordinates.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="instructions">
+      <p>Durée : <span data-mapbox-target="duration">-</span></p>
+      <p>Distance : <span data-mapbox-target="distance">-</span></p>
+    </div>
+  </div>
+</div>

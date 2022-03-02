@@ -9,12 +9,16 @@ class MessagePolicy < ApplicationPolicy
   def show?
     true
   end
-  
+
   def new?
     true
-  end 
+  end
 
   def destroy?
     record.user == user
+  end
+
+  def itinerary?
+    record.message_users.where(user_id: user.id).exists?
   end
 end
