@@ -11,7 +11,7 @@
   color: white;
   box-shadow: 2 3 20px rgb(248, 248, 248);
   border-radius: 10px;
-  border: 8px solid #ffffff;
+  border: 4px solid #ffffff;
 }
 .btn a{
   color: white;
@@ -25,5 +25,62 @@
 
 .btn-secondary-poner a {
   color:black;
+}
 
+.btn-circle-primary {
+  width: 50px;
+  height: 50px;
+  padding: 7px 10px;
+  border-radius: 25px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.btn-circle-secondary {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  font-size: 8px;
+  text-align: center;
+}
+
+.btn-circle .btn-profile {
+
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.btn-circle .btn-lock {
+  background-color: #FFE173;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.btn-circle .btn-play {
+  background-color: #ff97eb;
+  position: absolute;
+  top: 10px;
+  right: 50px;
+}
+
+.btn-circle .btn-list {
+
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+.btn-circle .btn-new {
+  position: absolute;
+  bottom: 10px;
+  left: 170px;
+}
+
+.btn-circle .btn-geo {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
