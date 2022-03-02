@@ -5,10 +5,10 @@ class MessagesController < ApplicationController
     @messages = policy_scope(Message)
 
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-    @markers = @flats.geocoded.map do |flat|
+    @markers = @messages.map do |message|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: message.latitude,
+        lng: message.longitude
       }
     end
   end
@@ -21,9 +21,14 @@ class MessagesController < ApplicationController
     authorize @message
   end
 
+  #create --> donner infos à qui envoyer 
+  #unlock
+
   def destroy
     @message.destroy
   end
+
+  
 
 
 
