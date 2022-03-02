@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   before_action :set_message, only: [:destroy, :show, :itinerary]
 
   def index
-# PARTIE filtrer depuis l'index Message
+  # PARTIE filtrer depuis l'index Message
     # if params[A TROUVER].present?
     #   sql_query = "APPUI BOUTON"
       # @messages = policy_scope(Message).where(???????)
@@ -26,6 +26,9 @@ class MessagesController < ApplicationController
     @message = Message.new
     authorize @message
   end
+
+  #create --> donner infos à qui envoyer 
+  #unlock
 
   def destroy
     @message.destroy
