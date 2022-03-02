@@ -1,1 +1,58 @@
 // Specific CSS for your home-page
+
+.container{
+
+}
+.logo-area{
+  margin:auto;
+  background-image: url('Fond-logo-area.png');
+  background-size:cover;
+  min-height: 92vh;
+}
+.logo{
+  text-align: center;
+}
+.howitworks-area{
+  display: flex;
+  margin:auto;
+}
+.login {
+  margin:auto;
+}
+
+.form-actions{
+  margin:auto
+}
+.form-inputs{
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.signupforgotpassword{
+  display: flex;
+  text-align: center;
+}
+
+
+.img-home {
+  object-fit: contain;
+  //width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.img-logo {
+  height: 200px;
+  object-fit: contain;
+  margin-top: 90px;
+}
+
+.footer{
+  background-color: #80CDDE;
+  background-size:cover;
+  color: white;
+  font-weight: bold;
+}
+
+.fab{
+  color: white
+}

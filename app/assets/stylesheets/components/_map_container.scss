@@ -1,0 +1,87 @@
+.map-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  .btn-circle-primary.btn-profile {
+    position: absolute;
+    top: 35px;
+    left: 10px;
+    width: 80px;
+    height: 80px;
+    padding: 7px 10px;
+    border-radius: 40px;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .btn-circle-primary.btn-new {
+    position: absolute;
+    bottom: 30px;
+    left: 155px;
+    width: 80px;
+    height: 80px;
+    padding: 7px 10px;
+    border-radius: 40px;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .btn-circle-secondary.btn-lock {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50px;
+    right: 10px;
+    background-color: #FFE173;
+    padding: 6px 0px;
+    border-radius: 40px;
+    font-size: 8px;
+  }
+
+  .btn-circle-secondary.btn-play {
+    background-color: #ff97eb;
+    padding: 6px 0px;
+    border-radius: 15px;
+    font-size: 8px;
+    text-align: center;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 120px;
+    right: 10px;
+    padding: 6px 0px;
+    border-radius: 40px;
+    font-size: 8px;
+  }
+
+  .btn-circle-secondary.btn-list {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 40px;
+    left: 20px;
+    padding: 6px 0px;
+    border-radius: 25px;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .btn-circle-secondary.btn-geo {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 40px;
+    right: 20px;
+    padding: 6px 0px;
+    border-radius: 25px;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .instructions {
+    position: absolute;
+    top: 80px;
+    z-index: 100;
+  }
+}

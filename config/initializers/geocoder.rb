@@ -26,3 +26,9 @@ Geocoder.configure(
   #   prefix: 'geocoder:'
   # }
 )
+
+Geocoder.configure(
+  # [...]
+  units: :m, # defaults to miles (:mi)
+  # [...]
+)
