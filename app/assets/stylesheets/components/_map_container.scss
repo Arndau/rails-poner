@@ -78,4 +78,10 @@
     font-size: 25px;
     text-align: center;
   }
+
+  .instructions {
+    position: absolute;
+    top: 80px;
+    z-index: 100;
+  }
 }
