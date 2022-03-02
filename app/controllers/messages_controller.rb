@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:destroy, :show]
+  before_action :set_message, only: [:destroy, :show, :itinerary]
 
   def index
 # PARTIE filtrer depuis l'index Message
@@ -31,7 +31,15 @@ class MessagesController < ApplicationController
     @message.destroy
   end
 
+  def itinerary
+    @message_coordinates = [@message.longitude, @message.latitude]
 
+    # Villa Gaudelet
+    @user_coordinates = [2.3853767, 48.8641418] # TODO: ask user for his coordinates (via JS)
+
+    # Un peu plus haut
+    # @user_coordinates = [2.4064122, 48.8759685] # TODO: ask user for his coordinates (via JS)
+  end
 
   private
 
