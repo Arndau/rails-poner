@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   before_action :set_message, only: [:destroy, :show, :itinerary]
 
   def index
-# PARTIE filtrer depuis l'index Message
+  # PARTIE filtrer depuis l'index Message
     # if params[A TROUVER].present?
     #   sql_query = "APPUI BOUTON"
       # @messages = policy_scope(Message).where(???????)
@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
         {
           lat: message.latitude,
           lng: message.longitude,
+          html: render_to_string(partial: "messages/message_marker", locals: { user: message.user, message: message }),
           # info_window: render_to_string(partial: "info_window", locals: { politic: politic }),
           # image_url: helpers.asset_url("corruption.png")
         }
@@ -26,6 +27,9 @@ class MessagesController < ApplicationController
     @message = Message.new
     authorize @message
   end
+
+  #create --> donner infos à qui envoyer 
+  #unlock
 
   def destroy
     @message.destroy
