@@ -5,11 +5,25 @@
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 
   </div>
-    <%# <% profile =  image_tag "assets/images/profile_pics/#{current_user.first_name}_#{current_user.last_name}.png", class:'avatar-large' %> %>
-  <%= link_to "x", "#", class: "btn btn-light btn-circle-primary btn-profile" %>
-  <%= link_to "x", "#", class: "btn btn-light btn-circle-secondary btn-lock" %>
-  <%= link_to "x", "#", class: "btn btn-light btn-circle-secondary btn-play" %>
-  <%= link_to "x", "#", class: "btn btn-light btn-circle-secondary btn-list" %>
-  <%= link_to "x", "#", class: "btn btn-light btn-circle-primary btn-new" %>
-  <%= link_to "x", "#", class: "btn btn-light btn-circle-secondary btn-geo" %>
+  <%= link_to "#", class: "profile" do%>
+    <div>
+      <%= image_tag "#{current_user.first_name}_#{current_user.last_name}.png",  class:'avatar-large'%>
+      <%= image_tag "Logo-pour-effet-sautillement.png", class:'logo-profile' %>
+    </div>
+  <% end %>
+  <%= link_to "#", class: "btn btn-light btn-circle-secondary btn-lock" do %>
+    <i class="fas fa-lock"></i>
+  <% end %>
+  <%= link_to "#", class: "btn btn-light btn-circle-secondary btn-play" do %>
+       <i class="fas fa-play"></i>
+  <% end %>
+  <%= link_to "#", class: "btn btn-light btn-circle-secondary btn-list" do %>
+    <i class="fas fa-list-ul"></i>
+  <% end %>
+  <%= link_to "#", class: "btn btn-light btn-circle-primary btn-new" do%>
+    <i class="fas fa-plus"></i>
+  <% end %>
+  <%= link_to "#", class: "btn btn-light btn-circle-secondary btn-geo" do %>
+    <i class="fas fa-crosshairs"></i>
+  <% end %>
 </div>
