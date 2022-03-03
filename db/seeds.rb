@@ -1,3 +1,5 @@
+require "open-uri"
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -15,6 +17,7 @@ user1 = User.create!(email: "guillaume@test.com", password: "123456", first_name
 user2 = User.create!(email: "amaury@gmail.com", password: "123456", first_name:"Amaury", last_name: "Vallet")
 user3 = User.create!(email: "Arnaud@gmail.com", password: "123456", first_name:"Arnaud", last_name: "Le Garrec")
 user4 = User.create!(email: "maxime@gmail.com", password: "123456", first_name:"maxime", last_name: "Gourgues")
+
 
 message1 = Message.create!(hint: "pettie surprise pour toi...", address: "16 villa Gaudelet", latitude: "48.865131", longitude: "2.379999", user: user1)
 message1.content = "Souvenir du Wagon !!!"
