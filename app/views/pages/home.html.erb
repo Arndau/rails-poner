@@ -6,7 +6,7 @@
   <div class="login">
     <% if user_signed_in? %>
       <div class="btn">
-        <%= link_to "Go to the map!", messages_path %>
+        <%= link_to "Go to the map!", message_users_path %>
       </div>
     <% else %>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
