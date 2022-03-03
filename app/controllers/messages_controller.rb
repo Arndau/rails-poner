@@ -28,7 +28,7 @@ class MessagesController < ApplicationController
     authorize @message
   end
 
-  #create --> donner infos à qui envoyer 
+  #create --> donner infos à qui envoyer
   #unlock
 
   def destroy
@@ -40,6 +40,7 @@ class MessagesController < ApplicationController
 
     # Villa Gaudelet
     @user_coordinates = [2.3853767, 48.8641418] # TODO: ask user for his coordinates (via JS)
+    authorize @message
 
     # Un peu plus haut
     # @user_coordinates = [2.4064122, 48.8759685] # TODO: ask user for his coordinates (via JS)
