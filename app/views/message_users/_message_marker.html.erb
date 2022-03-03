@@ -1,3 +1,8 @@
 <div>
-  <%= image_tag 'https://kitt.lewagon.com/placeholder/users/sarahlafer', class:'avatar-bordered', alt:'avatar-bordered'%>
+  <%= image_tag "#{user_message.message.user.first_name}_#{user_message.message.user.last_name}.png", class:'avatar-bordered', alt:'avatar-bordered'%>
+  <% if user_message.unlocked? %>
+    <i class="fas fa-play logo-status play"></i>
+  <% else %>
+    <i class="fas fa-lock logo-status lock"></i>
+  <% end %>
 </div>
