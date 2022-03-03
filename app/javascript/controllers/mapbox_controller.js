@@ -22,10 +22,10 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     });
 
-    //this.#addMarkersToMap();
-    //this.#fitMapToMarkers();
+    this.#addMarkersToMap();
+    this.#fitMapToMarkers();
 
-    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
+    // this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
     if (this.userCoordinatesValue.length != 0) {
       const bounds = [
         this.messageCoordinatesValue,
@@ -75,11 +75,11 @@ export default class extends Controller {
           this.distanceTarget.innerHTML = `${(data.distance / 1000).toFixed(1)} km`;
 
 
-         
+
 
           // Calculate the distance in kilometers between route start/end point.
           //const lineDistance = turf.length(route);
-          // calculer distance entre coord du message et coord du user 
+          // calculer distance entre coord du message et coord du user
           var line = turf.lineString(route);
           var length = turf.length(line, {units: 'miles'})*(1.60934*1000);
           console.log(length)
@@ -90,10 +90,10 @@ export default class extends Controller {
           if (length < 800) {
             console.log(Swal.fire("You're in ! Open up your Poner"));
           }
-           
-           
 
-                
+
+
+
         })
     }
   }
