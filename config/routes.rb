@@ -9,5 +9,4 @@ Rails.application.routes.draw do
       get :itinerary
     end
   end
-
 end
