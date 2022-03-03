@@ -2,6 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import mapboxgl from "mapbox-gl"
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 import * as turf from "@turf/turf"
+import Swal from 'sweetalert2'
 
 export default class extends Controller {
   static values = {
@@ -80,15 +81,17 @@ export default class extends Controller {
           // Calculate the distance in kilometers between route start/end point.
           //const lineDistance = turf.length(route);
           // calculer distance entre coord du message et coord du user 
-          var line = turf.lineString(route);
-          var length = turf.length(line, {units: 'miles'})*(1.60934*1000);
-          console.log(length)
-          const Swal = require('sweetalert2')
+          const line = turf.lineString(route);
+          const distance = turf.length(line, {units: 'kilometers'})*1000;
+          console.log(distance)
+          
 
 
           // si la distance fait moins de m, alors je viens déclencher une modale
-          if (length < 800) {
-            console.log(Swal.fire("You're in ! Open up your Poner"));
+          if (distance < 800) {
+            Swal.fire({
+              html: 'I will close in <b></b> milliseconds.',
+            }); 
           }
            
            
@@ -125,3 +128,11 @@ export default class extends Controller {
   };
 
 };
+
+
+// 1. Créer l'action access_to_message dans message_users controller (et la route qui va avec)
+// 2. Créer la vue qui va avec (avec le link_to)
+// 3. Récupérer dans mon JS, l'id du @message_user pour construire l'url vers l'action access_to_message
+// 4. Fetch cette url (method: GET)
+// 5. Je dois renvoyer avec l'action access_to_message une partial de la vue créé en point (2) en format text
+// 6. Je la récupère dans mon JS et je l'affecte à l'option html de mon SWAL

@@ -5,4 +5,12 @@ class MessageUserPolicy < ApplicationPolicy
       scope.where(user: user)
     end
   end
+
+  def access_to_message?
+    true
+  end
+
+  def update?
+  true
+  end
 end
