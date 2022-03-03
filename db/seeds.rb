@@ -37,7 +37,7 @@ message6.save
 
 
 message_user1 = MessageUser.create!(unlocked: true, read: true, message: message1, user: user2)
-message_user1 = MessageUser.create!(unlocked: false, read: true, message: message4, user: user3)
+message_user1 = MessageUser.create!(unlocked: true, read: true, message: message4, user: user3)
 message_user1 = MessageUser.create!(unlocked: false, read: true, message: message5, user: user3)
 message_user1 = MessageUser.create!(unlocked: false, read: true, message: message6, user: user3)
 message_user2 = MessageUser.create!(unlocked: false, read: false, message: message2, user: user3)

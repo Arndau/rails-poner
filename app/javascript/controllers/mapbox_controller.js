@@ -1,6 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import mapboxgl from "mapbox-gl"
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
+import * as turf from "@turf/turf"
 
 export default class extends Controller {
   static values = {
@@ -13,14 +14,6 @@ export default class extends Controller {
   static targets = ["duration", "distance"];
 
   connect() {
-    // console.log("message", this.messageCoordinatesValue);
-    // console.log("user", this.userCoordinatesValue);
-
-    // console.log("duration", this.durationTarget);
-    // console.log("distance", this.distanceTarget);
-
-    // TODO: geocode user
-    // this.userCoordinatesValue = .... -> [2.3853767, 48.8641418]
 
     mapboxgl.accessToken = this.apiKeyValue;
 
@@ -32,7 +25,7 @@ export default class extends Controller {
     this.#addMarkersToMap();
     this.#fitMapToMarkers();
 
-    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
+    // this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
     if (this.userCoordinatesValue.length != 0) {
       const bounds = [
         this.messageCoordinatesValue,
@@ -80,9 +73,29 @@ export default class extends Controller {
 
           this.durationTarget.innerHTML = `${Math.round(data.duration / 60)} min`;
           this.distanceTarget.innerHTML = `${(data.distance / 1000).toFixed(1)} km`;
+
+
+
+
+          // Calculate the distance in kilometers between route start/end point.
+          //const lineDistance = turf.length(route);
+          // calculer distance entre coord du message et coord du user
+          var line = turf.lineString(route);
+          var length = turf.length(line, {units: 'miles'})*(1.60934*1000);
+          console.log(length)
+          const Swal = require('sweetalert2')
+
+
+          // si la distance fait moins de m, alors je viens déclencher une modale
+          if (length < 800) {
+            console.log(Swal.fire("You're in ! Open up your Poner"));
+          }
+
+
+
+
         })
     }
-
   }
 
   #addMarkersToMap() {
@@ -98,9 +111,10 @@ export default class extends Controller {
 
       const customMarker = document.createElement("div");
       customMarker.innerHTML = marker.html.trim();
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
       new mapboxgl.Marker(customMarker)
         .setLngLat([marker.lng, marker.lat])
-        // .setPopup(popup)
+        .setPopup(popup)
         .addTo(this.map)
     });
   }
