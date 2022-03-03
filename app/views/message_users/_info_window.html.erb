@@ -2,11 +2,11 @@
   <div class= "container">
     <div class= "profilepic">
     photo
-      <%= %>
+      <%= image_tag "#{user_message.message.user.first_name}_#{user_message.message.user.last_name}.png" %>
     </div>
     <div class= "name">
     nom
-      <%= %>
+      <%= "#{user_message.message.user.first_name} #{user_message.message.user.last_name}" %>
     </div>
     <div class="address">
     address

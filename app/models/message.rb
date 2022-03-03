@@ -6,5 +6,5 @@ class Message < ApplicationRecord
   has_many :message_users
   validates :hint, presence: true
   validates :address, presence: true
-
+  has_rich_text :content
 end
