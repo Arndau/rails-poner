@@ -1,4 +1,3 @@
-<%= render "message_marker" %>
 <div class="map-container">
   <div style="width: 100vw; height: 100vh;"
     data-controller="mapbox"
@@ -6,7 +5,7 @@
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 
   </div>
-  <%= link_to "hello word", "#", class: "btn btn-success" %>
+    <%# <% profile =  image_tag "assets/images/profile_pics/#{current_user.first_name}_#{current_user.last_name}.png", class:'avatar-large' %> %>
   <%= link_to "x", "#", class: "btn btn-light btn-circle-primary btn-profile" %>
   <%= link_to "x", "#", class: "btn btn-light btn-circle-secondary btn-lock" %>
   <%= link_to "x", "#", class: "btn btn-light btn-circle-secondary btn-play" %>

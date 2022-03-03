@@ -19,6 +19,6 @@ class MessagePolicy < ApplicationPolicy
   end
 
   def itinerary?
-    record.message_users.where(user_id: user.id).exists?
+    true
   end
 end
