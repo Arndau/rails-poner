@@ -22,8 +22,10 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     });
 
-    this.#addMarkersToMap();
-    this.#fitMapToMarkers();
+    if (this.userCoordinatesValue.length === 0) {
+      this.#addMarkersToMap();
+      this.#fitMapToMarkers();
+    }
 
     // this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
 
