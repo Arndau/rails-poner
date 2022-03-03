@@ -20,4 +20,8 @@ class MessageUsersController < ApplicationController
       @message_user.save
   end
 
+  def show
+    @message_user = MessageUser.find(params[:id])
+    authorize @message_user
+  end
 end
