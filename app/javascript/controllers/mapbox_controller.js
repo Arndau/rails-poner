@@ -113,6 +113,7 @@ export default class extends Controller {
               .then((data) => {
                 Swal.fire({
                   html: data,
+                  showConfirmButton: false
                 });
                })
              
