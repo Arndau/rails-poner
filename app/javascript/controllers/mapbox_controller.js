@@ -135,7 +135,13 @@ export default class extends Controller {
 
       const customMarker = document.createElement("div");
       customMarker.innerHTML = marker.html.trim();
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+      const popupOffsets = {
+        'top': [-170, 0],
+        'top-left': [0, 0],
+        'top-right': [0, 0],
+        'bottom': [0, 0]
+      };
+      const popup = new mapboxgl.Popup({offset: popupOffsets,className: "poner-popup"}).setHTML(marker.info_window)
       new mapboxgl.Marker(customMarker)
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)

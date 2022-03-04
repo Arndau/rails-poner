@@ -7,7 +7,8 @@
   background-color: black;
   background-position: center;
   background-size: contain;
-  padding-top: 50px;
+  padding-top: 70px;
+  padding-left: 19px;
 
 
   .avatar-bordered {
@@ -18,20 +19,19 @@
     box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     border: #ffffff52 1px solid;
     margin-left: 10px;
-    margin-right: 15px;
+    margin-right: 7px;
   }
 }
 
 .message-show__title {
   display: flex;
-  box-sizing: border-box;
   text-align: center;
   justify-content: flex-start;
   align-items: center;
   width: fit-content;
-  z-index: 1;
+  z-index: 11221;
   width: 100%;
-
+  position: relative;
 
   p {
     margin-bottom: 0;
@@ -46,8 +46,8 @@
 
 .bubble_messages {
   position: absolute;
-  top: 110px;
-  left: 10px;
+  top: 130px;
+  left: 28px;
   .message-show__bubble-message {
     display: flex;
     justify-content: flex-start;
