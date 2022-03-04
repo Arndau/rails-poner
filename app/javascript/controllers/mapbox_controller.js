@@ -40,8 +40,8 @@ export default class extends Controller {
 
       this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 
-      this.map.on('load', this.#onLoad.bind(this));
     }
+    this.map.on('load', this.#onLoad.bind(this));
   }
 
   #onLoad() {
@@ -71,20 +71,13 @@ export default class extends Controller {
       this.#addItinerary();
     });
   }
-          // Calculate the distance in kilometers between route start/end point.
-          //const lineDistance = turf.length(route);
 
-          // calculer distance entre coord du message et coord du user
-          const line = turf.lineString(route);
-          const distance = turf.length(line, {units: 'kilometers'})*1000;
-          console.log(distance)   
 
 
   #addItinerary() {
     if (this.itineraryLoaded == true) { return }
 
     const url = `https://api.mapbox.com/directions/v5/mapbox/walking/${this.userCoordinatesValue[0]},${this.userCoordinatesValue[1]};${this.messageCoordinatesValue[0]},${this.messageCoordinatesValue[1]}?steps=true&geometries=geojson&access_token=${this.apiKeyValue}`;
-
 
     fetch(url)
       .then(response => response.json())
@@ -117,28 +110,8 @@ export default class extends Controller {
             'line-width': 5,
             'line-opacity': 0.75,
             'line-dasharray': [0, 2]
-
-          // si la distance fait moins de m, alors je viens déclencher une modale
-          if (distance < 2000) {
-            const url = `/message_users/${this.messageUserIdValue}/access_to_message`
-            fetch(url, { headers: { "Accept": "text/plain" } })
-              .then(response => response.text())
-              .then((data) => {
-                Swal.fire({
-                  html: data,
-                  showConfirmButton: false
-                });
-               })
-             
-
           }
         });
-
-        this.itineraryLoaded = true;
-
-        this.durationTarget.innerHTML = `${Math.round(data.duration / 60)} min`;
-        this.distanceTarget.innerHTML = `${(data.distance / 1000).toFixed(1)} km`;
-
         // Calculate the distance in kilometers between route start/end point.
         //const lineDistance = turf.length(route);
 
@@ -148,11 +121,25 @@ export default class extends Controller {
         console.log(distance)
 
         // si la distance fait moins de m, alors je viens déclencher une modale
-        if (distance < 800) {
-          Swal.fire({
-            html: "You're all set ! Open up your Poner down below 🤩",
-          });
+        if (distance < 200) {
+          const url = `/message_users/${this.messageUserIdValue}/access_to_message`
+          fetch(url, { headers: { "Accept": "text/plain" } })
+            .then(response => response.text())
+            .then((data) => {
+              Swal.fire({
+                html: data,
+                showConfirmButton: false
+              });
+              })
         }
+
+        this.itineraryLoaded = true;
+
+        this.durationTarget.innerHTML = `${Math.round(data.duration / 60)} min`;
+        this.distanceTarget.innerHTML = `${(data.distance / 1000).toFixed(1)} km`;
+
+        // Calculate the distance in kilometers between route start/end point.
+        //const lineDistance = turf.length(route);
       })
   }
 
