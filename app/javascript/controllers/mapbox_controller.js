@@ -23,10 +23,24 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     });
 
+        // Add geolocate control to the map.
+    this.map.addControl(
+      new mapboxgl.GeolocateControl({
+      positionOptions: {
+      enableHighAccuracy: true
+      },
+      // When active the map will receive updates to the device's location as it changes.
+      trackUserLocation: true,
+      // Draw an arrow next to the location dot to indicate which direction the device is heading.
+      showUserHeading: true
+      })
+      );
+
     if (this.userCoordinatesValue.length === 0) {
       this.#addMarkersToMap();
       this.#fitMapToMarkers();
     }
+
 
     // this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
 
@@ -37,6 +51,8 @@ export default class extends Controller {
       ];
 
       this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+
+
 
       const url = `https://api.mapbox.com/directions/v5/mapbox/walking/${this.userCoordinatesValue[0]},${this.userCoordinatesValue[1]};${this.messageCoordinatesValue[0]},${this.messageCoordinatesValue[1]}?steps=true&geometries=geojson&access_token=${this.apiKeyValue}`;
 
@@ -80,26 +96,22 @@ export default class extends Controller {
 
 
 
-
           // Calculate the distance in kilometers between route start/end point.
           //const lineDistance = turf.length(route);
 
-          // calculer distance entre coord du message et coord du user 
+          // calculer distance entre coord du message et coord du user
           const line = turf.lineString(route);
           const distance = turf.length(line, {units: 'kilometers'})*1000;
           console.log(distance)
-        
+
 
 
           // si la distance fait moins de m, alors je viens déclencher une modale
           if (distance < 800) {
             Swal.fire({
               html: 'I will close in <b></b> milliseconds.',
-            }); 
+            });
           }
-
-
-
 
         })
     }
@@ -131,6 +143,7 @@ export default class extends Controller {
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   };
+
 
 };
 
