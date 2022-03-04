@@ -9,7 +9,8 @@ export default class extends Controller {
     apiKey: String,
     markers: Array,
     messageCoordinates: Array,
-    userCoordinates: Array
+    userCoordinates: Array,
+    messageUserId: Number
   }
 
   static targets = ["duration", "distance"];
@@ -94,28 +95,27 @@ export default class extends Controller {
           this.durationTarget.innerHTML = `${Math.round(data.duration / 60)} min`;
           this.distanceTarget.innerHTML = `${(data.distance / 1000).toFixed(1)} km`;
 
-
-
           // Calculate the distance in kilometers between route start/end point.
           //const lineDistance = turf.length(route);
 
           // calculer distance entre coord du message et coord du user
           const line = turf.lineString(route);
           const distance = turf.length(line, {units: 'kilometers'})*1000;
-          console.log(distance)
+          console.log(distance)   
 
 
 
           // si la distance fait moins de m, alors je viens déclencher une modale
-          if (distance < 800) {
-            Swal.fire({
-<<<<<<< HEAD
-              html: "You're all set ! Open up your Poner down below 🤩",
-            }); 
-=======
-              html: 'I will close in <b></b> milliseconds.',
-            });
->>>>>>> 15f063b3d1afbb5d5d39653a7f2791f25e8eadc3
+          if (distance < 2000) {
+            const url = `/message_users/${this.messageUserIdValue}/access_to_message`
+            fetch(url, { headers: { "Accept": "text/plain" } })
+              .then(response => response.text())
+              .then((data) => {
+                Swal.fire({
+                  html: data,
+                });
+               })
+             
           }
 
         })
