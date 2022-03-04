@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
         {
           lat: message.latitude,
           lng: message.longitude,
-          html: render_to_string(partial: "message/message_marker", locals: { user: message.user, message: message }),
+          #html: render_to_string(partial: "message/message_marker", locals: { user: message.user, message: message }),
           # info_window: render_to_string(partial: "info_window", locals: { politic: politic }),
           # image_url: helpers.asset_url("corruption.png")
         }
