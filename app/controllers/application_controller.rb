@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
 
   # redirection après login vers l'index
   def after_sign_in_path_for(resource)
-    messages_path # your path
+    message_users_path # your path
   end
 end
