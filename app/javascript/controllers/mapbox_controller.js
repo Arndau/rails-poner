@@ -94,7 +94,7 @@ export default class extends Controller {
           // si la distance fait moins de m, alors je viens déclencher une modale
           if (distance < 800) {
             Swal.fire({
-              html: 'I will close in <b></b> milliseconds.',
+              html: "You're all set ! Open up your Poner down below 🤩",
             }); 
           }
 
@@ -134,9 +134,11 @@ export default class extends Controller {
 
 };
 
-
+//OK
 // 1. Créer l'action access_to_message dans message_users controller (et la route qui va avec)
 // 2. Créer la vue qui va avec (avec le link_to)
+
+// A FAIRE
 // 3. Récupérer dans mon JS, l'id du @message_user pour construire l'url vers l'action access_to_message
 // 4. Fetch cette url (method: GET)
 // 5. Je dois renvoyer avec l'action access_to_message une partial de la vue créé en point (2) en format text
