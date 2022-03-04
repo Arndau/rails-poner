@@ -1,0 +1,30 @@
+.mapboxgl-popup-content{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: rgb(0, 0, 0);
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  outline: 0;
+
+}
+
+
+.mapboxgl-popup-tip {
+  display:none;
+}
+
+.btninfowindow{
+  display: flex;
+}
+
+.message-show.info-window {
+  width: unset;
+  height: unset;
+  .bubble_messages .message-show__bubble-message{
+    width: 100%;
+  }
+}

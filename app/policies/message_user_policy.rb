@@ -11,6 +11,11 @@ class MessageUserPolicy < ApplicationPolicy
   end
 
   def update?
-  true
+    true
   end
+
+  def show?
+    true
+  end
+
 end

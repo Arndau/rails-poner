@@ -23,10 +23,13 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     });
 
-    //this.#addMarkersToMap();
-    //this.#fitMapToMarkers();
+    if (this.userCoordinatesValue.length === 0) {
+      this.#addMarkersToMap();
+      this.#fitMapToMarkers();
+    }
 
-    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
+    // this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
+
     if (this.userCoordinatesValue.length != 0) {
       const bounds = [
         this.messageCoordinatesValue,
@@ -76,15 +79,16 @@ export default class extends Controller {
           this.distanceTarget.innerHTML = `${(data.distance / 1000).toFixed(1)} km`;
 
 
-         
+
 
           // Calculate the distance in kilometers between route start/end point.
           //const lineDistance = turf.length(route);
+
           // calculer distance entre coord du message et coord du user 
           const line = turf.lineString(route);
           const distance = turf.length(line, {units: 'kilometers'})*1000;
           console.log(distance)
-          
+        
 
 
           // si la distance fait moins de m, alors je viens déclencher une modale
@@ -93,10 +97,10 @@ export default class extends Controller {
               html: 'I will close in <b></b> milliseconds.',
             }); 
           }
-           
-           
 
-                
+
+
+
         })
     }
   }
@@ -114,9 +118,10 @@ export default class extends Controller {
 
       const customMarker = document.createElement("div");
       customMarker.innerHTML = marker.html.trim();
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
       new mapboxgl.Marker(customMarker)
         .setLngLat([marker.lng, marker.lat])
-        // .setPopup(popup)
+        .setPopup(popup)
         .addTo(this.map)
     });
   }

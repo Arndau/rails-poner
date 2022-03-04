@@ -1,0 +1,29 @@
+<div class="message-show info-window" style="background-image: url(<%= user_message.unlocked? ? 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/86/0e/caption.jpg?w=800&h=-1&s=1' : ''  %>); background-size: cover">
+
+  <div class="message-show__title">
+    <% if  %>
+      <%= image_tag 'https://wpdaddy.com/wp-content/uploads/2020/11/thispersondoesnotexist-768x565.jpg', class: "avatar-bordered" %>
+    <% end %>
+    <%#= cl_image_tag current_user.avatar.key, class: "avatar-bordered " %>
+    <p>
+      <%= user_message.message.address %>
+    </p>
+  </div>
+
+
+  <div class="bubble_messages">
+    <div class="message-show__bubble-message">
+      <p class="message-content">
+        <% if user_message.unlocked? %>
+          <%= user_message.message.content %>
+        <% else %>
+          <%= icon('fas', 'flag') %>
+          <%= user_message.message.hint %>
+        <% end %>
+      </p>
+    </div>
+    <% if !user_message.unlocked? %>
+      <%= link_to "Itinéraire", itinerary_message_path(user_message.message), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

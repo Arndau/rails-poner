@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :messages, dependent: :destroy
   has_many :message_users, dependent: :destroy
+  has_one_attached :image
 end
