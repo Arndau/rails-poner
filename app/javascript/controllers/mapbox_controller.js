@@ -9,7 +9,8 @@ export default class extends Controller {
     apiKey: String,
     markers: Array,
     messageCoordinates: Array,
-    userCoordinates: Array
+    userCoordinates: Array,
+    messageUserId: Number
   }
 
   static targets = ["duration", "distance"];
@@ -94,23 +95,27 @@ export default class extends Controller {
           this.durationTarget.innerHTML = `${Math.round(data.duration / 60)} min`;
           this.distanceTarget.innerHTML = `${(data.distance / 1000).toFixed(1)} km`;
 
-
-
           // Calculate the distance in kilometers between route start/end point.
           //const lineDistance = turf.length(route);
 
           // calculer distance entre coord du message et coord du user
           const line = turf.lineString(route);
           const distance = turf.length(line, {units: 'kilometers'})*1000;
-          console.log(distance)
+          console.log(distance)   
 
 
 
           // si la distance fait moins de m, alors je viens déclencher une modale
-          if (distance < 800) {
-            Swal.fire({
-              html: 'I will close in <b></b> milliseconds.',
-            });
+          if (distance < 2000) {
+            const url = `/message_users/${this.messageUserIdValue}/access_to_message`
+            fetch(url, { headers: { "Accept": "text/plain" } })
+              .then(response => response.text())
+              .then((data) => {
+                Swal.fire({
+                  html: data,
+                });
+               })
+             
           }
 
         })
@@ -153,9 +158,11 @@ export default class extends Controller {
 
 };
 
-
+//OK
 // 1. Créer l'action access_to_message dans message_users controller (et la route qui va avec)
 // 2. Créer la vue qui va avec (avec le link_to)
+
+// A FAIRE
 // 3. Récupérer dans mon JS, l'id du @message_user pour construire l'url vers l'action access_to_message
 // 4. Fetch cette url (method: GET)
 // 5. Je dois renvoyer avec l'action access_to_message une partial de la vue créé en point (2) en format text

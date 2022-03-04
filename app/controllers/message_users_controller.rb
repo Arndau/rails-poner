@@ -1,5 +1,5 @@
 class MessageUsersController < ApplicationController
-
+  before_action :set_message_user, only: [:itinerary, :update, :access_to_message, :show]
   def index
     @user_messages = policy_scope(MessageUser)
     @markers = @user_messages.map do |user_message|
@@ -13,21 +13,39 @@ class MessageUsersController < ApplicationController
     end
   end
 
+
+  def itinerary
+    @message_coordinates = [@message_user.message.longitude, @message_user.message.latitude]
+
+    # Villa Gaudelet
+    @user_coordinates = [2.3853767, 48.8641418] # TODO: ask user for his coordinates (via JS)
+
+    # Un peu plus haut
+    # @user_coordinates = [2.4064122, 48.8759685] # TODO: ask user for his coordinates (via JS)
+  end
+
+
   def update
-      @message_user= MessageUser.find(params[:id])
       @message_user.unlocked = true
       @message_user.save
-      authorize @message_user
+      redirect_to message_user_path(@message_user)
   end
 
 
   def access_to_message
-    @message_user= MessageUser.find(params[:id])
-    authorize @message_user
-    
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'message_users/access_to_message', locals: { message_user: @message_user }, formats: [:html] }
+    end
   end
 
   def show
+   
+  end
+
+  private
+
+  def set_message_user
     @message_user = MessageUser.find(params[:id])
     authorize @message_user
   end
