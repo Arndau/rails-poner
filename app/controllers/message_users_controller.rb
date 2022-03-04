@@ -17,6 +17,14 @@ class MessageUsersController < ApplicationController
   def itinerary
     @message_coordinates = [@message_user.message.longitude, @message_user.message.latitude]
 
+    @markers = [
+      {
+        lat: @message_user.message.latitude,
+        lng: @message_user.message.longitude,
+        html: render_to_string(partial: "message_marker", locals: { user_message: @message_user}),
+      }
+    ]
+
     # Villa Gaudelet
     @user_coordinates = [2.3853767, 48.8641418] # TODO: ask user for his coordinates (via JS)
 
@@ -32,11 +40,11 @@ class MessageUsersController < ApplicationController
 
 
   def access_to_message
-    
+
   end
 
   def show
-   
+
   end
 
   private

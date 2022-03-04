@@ -23,7 +23,7 @@
       </p>
     </div>
     <% if !user_message.unlocked? %>
-      <%= link_to "Itinéraire", itinerary_message_path(user_message.message), class: "btn btn-primary" %>
+      <%= link_to "Itinéraire", itinerary_message_user_path(user_message), class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

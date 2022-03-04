@@ -1,15 +1,19 @@
 .mapboxgl-popup-content{
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: rgb(0, 0, 0);
+  opacity: 0.9;
+  height: 93vh;
+  width: 43vh;
+  margin-left: -62px;
+  margin-bottom: -380px;
+  background-color: black;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   outline: 0;
-
 }
 
 

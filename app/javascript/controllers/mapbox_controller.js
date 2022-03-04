@@ -15,7 +15,6 @@ export default class extends Controller {
   static targets = ["duration", "distance"];
 
   connect() {
-
     mapboxgl.accessToken = this.apiKeyValue;
 
     this.map = new mapboxgl.Map({
@@ -23,24 +22,12 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     });
 
-        // Add geolocate control to the map.
-    this.map.addControl(
-      new mapboxgl.GeolocateControl({
-      positionOptions: {
-      enableHighAccuracy: true
-      },
-      // When active the map will receive updates to the device's location as it changes.
-      trackUserLocation: true,
-      // Draw an arrow next to the location dot to indicate which direction the device is heading.
-      showUserHeading: true
-      })
-      );
+    this.#addGeolocationControl();
+    this.#addMarkersToMap();
 
     if (this.userCoordinatesValue.length === 0) {
-      this.#addMarkersToMap();
       this.#fitMapToMarkers();
     }
-
 
     // this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
 
@@ -109,17 +96,28 @@ export default class extends Controller {
           // si la distance fait moins de m, alors je viens déclencher une modale
           if (distance < 800) {
             Swal.fire({
-<<<<<<< HEAD
               html: "You're all set ! Open up your Poner down below 🤩",
-            }); 
-=======
-              html: 'I will close in <b></b> milliseconds.',
             });
->>>>>>> 15f063b3d1afbb5d5d39653a7f2791f25e8eadc3
+
           }
 
         })
     }
+  }
+
+  #addGeolocationControl() {
+    // Add geolocate control to the map.
+    this.map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        // When active the map will receive updates to the device's location as it changes.
+        trackUserLocation: true,
+        // Draw an arrow next to the location dot to indicate which direction the device is heading.
+        showUserHeading: true
+      })
+    );
   }
 
   #addMarkersToMap() {
