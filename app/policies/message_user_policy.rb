@@ -18,4 +18,8 @@ class MessageUserPolicy < ApplicationPolicy
     true
   end
 
+  def itinerary?
+    true
+  end
+
 end
