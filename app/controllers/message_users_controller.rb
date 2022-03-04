@@ -14,10 +14,17 @@ class MessageUsersController < ApplicationController
   end
 
   def update
-      @message= Message.find(params[:id])
-      @message_user = MessageUser.find_by(user: current_user, message: @message)
+      @message_user= MessageUser.find(params[:id])
       @message_user.unlocked = true
       @message_user.save
+      authorize @message_user
+  end
+
+
+  def access_to_message
+    @message_user= MessageUser.find(params[:id])
+    authorize @message_user
+    
   end
 
   def show
