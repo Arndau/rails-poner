@@ -9,7 +9,8 @@ export default class extends Controller {
     apiKey: String,
     markers: Array,
     messageCoordinates: Array,
-    userCoordinates: Array
+    userCoordinates: Array,
+    messageUserId: Number
   }
 
   static targets = ["duration", "distance"];
@@ -70,11 +71,20 @@ export default class extends Controller {
       this.#addItinerary();
     });
   }
+          // Calculate the distance in kilometers between route start/end point.
+          //const lineDistance = turf.length(route);
+
+          // calculer distance entre coord du message et coord du user
+          const line = turf.lineString(route);
+          const distance = turf.length(line, {units: 'kilometers'})*1000;
+          console.log(distance)   
+
 
   #addItinerary() {
     if (this.itineraryLoaded == true) { return }
 
     const url = `https://api.mapbox.com/directions/v5/mapbox/walking/${this.userCoordinatesValue[0]},${this.userCoordinatesValue[1]};${this.messageCoordinatesValue[0]},${this.messageCoordinatesValue[1]}?steps=true&geometries=geojson&access_token=${this.apiKeyValue}`;
+
 
     fetch(url)
       .then(response => response.json())
@@ -107,6 +117,20 @@ export default class extends Controller {
             'line-width': 5,
             'line-opacity': 0.75,
             'line-dasharray': [0, 2]
+
+          // si la distance fait moins de m, alors je viens déclencher une modale
+          if (distance < 2000) {
+            const url = `/message_users/${this.messageUserIdValue}/access_to_message`
+            fetch(url, { headers: { "Accept": "text/plain" } })
+              .then(response => response.text())
+              .then((data) => {
+                Swal.fire({
+                  html: data,
+                  showConfirmButton: false
+                });
+               })
+             
+
           }
         });
 
@@ -168,7 +192,13 @@ export default class extends Controller {
 
       const customMarker = document.createElement("div");
       customMarker.innerHTML = marker.html.trim();
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+      const popupOffsets = {
+        'top': [-170, 0],
+        'top-left': [0, 0],
+        'top-right': [0, 0],
+        'bottom': [0, 0]
+      };
+      const popup = new mapboxgl.Popup({offset: popupOffsets,className: "poner-popup"}).setHTML(marker.info_window)
       new mapboxgl.Marker(customMarker)
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)

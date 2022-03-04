@@ -4,6 +4,7 @@
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-user-coordinates-value="<%= @user_coordinates.to_json %>"
     data-mapbox-message-coordinates-value="<%= @message_coordinates.to_json %>"
+    data-mapbox-message-user-id-value="<%= @message_user.id %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     <div class="instructions">
       <p class= infoitinerary><span data-mapbox-target="duration">-</span></p>
