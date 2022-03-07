@@ -1,6 +1,11 @@
 <%= content_for(:topnavbar_title) do %>
   <%= @message_address%>
 <% end %>
+<%= content_for(:bottom_navbar_title) do %>
+  <%= link_to message_users_path, class: "navbar-brand" do %>
+        <%= image_tag "exit_logo.png" %>
+      <% end %>
+<% end %>
 
 <div class="map-container">
   <div style="width: 100vw; height: 100vh;"

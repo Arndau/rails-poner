@@ -1,7 +1,7 @@
 .map-container {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - #{$topnavbar-height} - #{$bottomnavbar-height});
 
   .btn-circle-primary.btn-profile {
     position: absolute;
