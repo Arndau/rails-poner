@@ -21,8 +21,10 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @sender_name = "#{message.last_name} #{message.first_name}"
 
+    @message = Message.find(params[:id])
+    @sender_name = "#{@message.user.last_name} #{@message.user.first_name}"
+    raise
   end
 
   def new

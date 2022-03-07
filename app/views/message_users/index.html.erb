@@ -1,5 +1,5 @@
-<%= content_for(:navbar_title) do %>
-  You are <%= pluralize(@unlocked_messages_counter, "pone", "pones") %> behind !
+<%= content_for(:topnavbar_title) do %>
+  You are <span class="addbackground"><%= pluralize(@unlocked_messages_counter, "pone", "pones") %></span> behind !
 <% end %>
 
 <div class="map-container">
