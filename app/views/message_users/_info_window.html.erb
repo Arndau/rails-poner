@@ -6,11 +6,9 @@
     <% end %>
     <%#= cl_image_tag current_user.avatar.key, class: "avatar-bordered " %>
       <p>
-      <i class="fa-solid fa-calendar-days"></i>
-       Posted : <%= distance_of_time_in_words(Time.now, user_message.message.created_at) %> ago
         <%= icon('fas', 'calendar') %>
-        <%#= <i class="fa-solid fa-quote-left"></i> %>
-      <%= user_message.message.address %>
+       <em>Posted :</em> <%= distance_of_time_in_words(Time.now, user_message.message.created_at) %> <em>ago</em>
+            <%= user_message.message.address %>
     </p>
   </div>
 
@@ -31,3 +29,8 @@
     <% end %>
   </div>
 </div>
+
+
+<%# <i class="fa-thin fa-quote-left"></i>
+<i class="fa-thin fa-quote-right"></i>
+ %>
