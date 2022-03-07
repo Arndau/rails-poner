@@ -14,6 +14,10 @@ class MessagePolicy < ApplicationPolicy
     true
   end
 
+  def create?
+    true
+  end
+
   def destroy?
     record.user == user
   end

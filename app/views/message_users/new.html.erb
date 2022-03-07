@@ -1,0 +1,8 @@
+<h4>SELECT YOUR PONFRIENDS</h4>
+
+<ul>
+  <%= simple_form_for [@message, Message.new], url: message_message_users_path, method: :post do |f|  %>
+    <%= f.association :recipients,   as: :check_boxes, label_method: lambda { |recipient| "#{recipient.first_name} #{recipient.last_name}" } %>
+    <%= f.submit %>
+  <% end %>
+</ul>
