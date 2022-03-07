@@ -1,3 +1,10 @@
+<%= content_for(:topnavbar_title) do %>
+  You are <span class="addbackground"><%= pluralize(@unlocked_messages_counter, "new pone", "new pones") %></span> behind !
+<% end %>
+<%= content_for(:bottom_navbar_title) do %>
+  You are <span class="addbackground"><%= pluralize(@unlocked_messages_counter, "new pone", "new pones") %></span> behind !
+<% end %>
+
 <div class="map-container">
   <div style="width: 100vw; height: 100vh;"
     data-controller="mapbox"
@@ -11,12 +18,16 @@
       <%= image_tag "Logo-pour-effet-sautillement.png", class:'logo-profile' %>
     </div>
   <% end %>
-  <%# <%= link_to "#", class: "btn btn-light btn-circle-secondary btn-lock" do %>
-    <%# <i class="fas fa-lock"></i>
-  <% end %>
-  <%# <%= link_to "#", class: "btn btn-light btn-circle-secondary btn-play" do %>
-       <%# <i class="fas fa-play"></i> %>
-  <%# <% end %>
+
+   <%= link_to message_users_path(locked: true), class: "btn btn-light btn-circle-secondary btn-lock" do %>
+     <i class="fas fa-lock"></i>
+    <% end %>
+
+
+    <%= link_to message_users_path(locked: false), class: "btn btn-light btn-circle-secondary btn-play" do %>
+      <i class="fas fa-play"></i>
+    <% end %>
+
   <%# <%= link_to "#", class: "btn btn-light btn-circle-secondary btn-list" do %>
     <%# <i class="fas fa-list-ul"></i> %>
   <%# <% end %>
