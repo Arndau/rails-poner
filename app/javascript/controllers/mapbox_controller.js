@@ -44,6 +44,14 @@ export default class extends Controller {
     this.map.on('load', this.#onLoad.bind(this));
   }
 
+  #setInputValue(event) {
+    this.addressTarget.value = event.result["place_name"]
+  }
+
+  #clearInputValue() {
+    this.addressTarget.value = ""
+  }
+
   #onLoad() {
     this.geolocate.trigger();
   }
