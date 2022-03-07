@@ -1,24 +1,21 @@
-.mapboxgl-popup-content{
-
-    /* position: relative; */
-    opacity: 0.9;
-    height: 93vh;
-    width: 43vh;
-    align-self: center;
-    background-color: black;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
+.poner-popup {
+  background-color: rgba(0,0,0,0.9);
+  top: 1em;
+  z-index: 500;
+  transform: none !important;
+  bottom: 50px;
+  right: 1em;
+  left: 1em;
+  border-radius: 10px;
+  position: unset;
+  .mapboxgl-popup-content {
+    background-color: transparent;
+    height: 100%;
+    padding: 0;
     .message-show.info-window {
       background-size: cover;
-      height: 100%;
     }
-}
-
-.poner-popup {
-  top: -170px;
-  z-index: 500;
-
+  }
 }
 
 
@@ -32,7 +29,6 @@
 
 .message-show.info-window {
   width: unset;
-  height: unset;
   .bubble_messages .message-show__bubble-message{
     width: 100%;
   }
