@@ -41,7 +41,7 @@ export default class extends Controller {
       this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 
     }
-    this.map.on('load', this.#onLoad.bind(this));
+ /*    this.map.on('load', this.#onLoad.bind(this)); */
   }
 
   #onLoad() {
@@ -179,13 +179,8 @@ export default class extends Controller {
 
       const customMarker = document.createElement("div");
       customMarker.innerHTML = marker.html.trim();
-      const popupOffsets = {
-        'top': [-170, 0],
-        'top-left': [0, 0],
-        'top-right': [0, 0],
-        'bottom': [0, 0]
-      };
-      const popup = new mapboxgl.Popup({offset: popupOffsets,className: "poner-popup"}).setHTML(marker.info_window)
+
+      const popup = new mapboxgl.Popup({maxWidth:'100%', anchor: 'top-left', className: "poner-popup"}).setHTML(marker.info_window)
       new mapboxgl.Marker(customMarker)
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
