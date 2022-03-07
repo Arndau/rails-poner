@@ -1,3 +1,17 @@
 .addbackground{
   background-color: #FAE183;
 }
+.topnavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $topnavbar-height;
+  padding:  0 1rem;
+  img {
+    width: 100px;
+  }
+  // position: fixed;
+  // top: 0;
+  // right: 0;
+  // left:0
+}

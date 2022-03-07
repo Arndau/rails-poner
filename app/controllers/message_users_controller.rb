@@ -1,7 +1,7 @@
 class MessageUsersController < ApplicationController
   before_action :set_message_user, only: [:itinerary, :update, :access_to_message, :show]
 
-  #définir une action au bouton locked de l'index 
+  #définir une action au bouton locked de l'index
   #
   def index
     @user_messages = policy_scope(MessageUser)
@@ -13,8 +13,8 @@ class MessageUsersController < ApplicationController
     if params[:locked] == "false"
       @user_messages = @user_messages.where(unlocked: true)
     end
-    
-    
+
+
     @markers = @user_messages.map do |user_message|
       {
         lat: user_message.message.latitude,
@@ -24,6 +24,7 @@ class MessageUsersController < ApplicationController
       }
     end
     @unlocked_messages_counter = current_user.received_messages.where("message_users.unlocked = ?", false).count
+    @locked_messages_counter = current_user.received_messages.where("message_users.unlocked = ?", true).count
   end
 
 
