@@ -7,4 +7,5 @@ class Message < ApplicationRecord
   validates :hint, presence: true
   validates :address, presence: true
   has_rich_text :content
+  has_one_attached :photo
 end

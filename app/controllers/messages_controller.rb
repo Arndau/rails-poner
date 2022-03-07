@@ -32,8 +32,13 @@ class MessagesController < ApplicationController
     authorize @message
   end
 
-  #create --> donner infos à qui envoyer
-  #unlock
+  def create
+    @message = Message.new(message_params)
+    @message.save
+
+    redirect_to message_path(@message)
+  end
+
 
   def destroy
     @message.destroy
@@ -48,4 +53,7 @@ class MessagesController < ApplicationController
     authorize @message
   end
 
+  def message_params
+    params.require(:message).permit(:hint, :address, :user_id)
+  end
 end
