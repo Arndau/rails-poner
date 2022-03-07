@@ -5,7 +5,11 @@
       <%= image_tag 'https://wpdaddy.com/wp-content/uploads/2020/11/thispersondoesnotexist-768x565.jpg', class: "avatar-bordered" %>
     <% end %>
     <%#= cl_image_tag current_user.avatar.key, class: "avatar-bordered " %>
-    <p>
+      <p>
+      <i class="fa-solid fa-calendar-days"></i>
+       Posted : <%= distance_of_time_in_words(Time.now, user_message.message.created_at) %> ago
+        <%= icon('fas', 'calendar') %>
+        <%#= <i class="fa-solid fa-quote-left"></i> %>
       <%= user_message.message.address %>
     </p>
   </div>
