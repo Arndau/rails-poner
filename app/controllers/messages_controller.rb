@@ -21,6 +21,8 @@ class MessagesController < ApplicationController
   end
 
   def show
+    @sender_name = "#{message.last_name} #{message.first_name}"
+
   end
 
   def new
@@ -35,7 +37,7 @@ class MessagesController < ApplicationController
     @message.destroy
   end
 
-  
+
 
   private
 

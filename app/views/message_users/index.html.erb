@@ -1,3 +1,7 @@
+<%= content_for(:navbar_title) do %>
+  You are <%= pluralize(@unlocked_messages_counter, "pone", "pones") %> behind !
+<% end %>
+
 <div class="map-container">
   <div style="width: 100vw; height: 100vh;"
     data-controller="mapbox"
