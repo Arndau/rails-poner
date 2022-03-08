@@ -1,8 +1,5 @@
 <%= content_for(:topnavbar_title) do %>
   You are <span class="addbackground"><%= pluralize(@unlocked_messages_counter, "new pone", "new pones") %></span> behind !
-  <%= link_to "#", class: "navbar-localisation" do %>
-      <%= image_tag "geoloc_symbol.png" %>
-    <% end %>
 <% end %>
 <%= content_for(:bottom_navbar_title) do %>
   <p class="locked_unlocked_info"><%=@unlocked_messages_counter%> Locked</p>

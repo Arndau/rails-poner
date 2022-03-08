@@ -33,15 +33,10 @@ export default class extends Controller {
     // this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
 
     if (this.userCoordinatesValue.length != 0) {
-      const bounds = [
-        this.messageCoordinatesValue,
-        this.userCoordinatesValue
-      ];
+      this.#fitMapToItinerary();
 
-      this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
-
+      this.map.on('load', this.onLoad.bind(this));
     }
- this.map.on('load', this.#onLoad.bind(this));
   }
 
   #setInputValue(event) {
@@ -52,7 +47,7 @@ export default class extends Controller {
     this.addressTarget.value = ""
   }
 
-  #onLoad() {
+  onLoad() {
     this.geolocate.trigger();
   }
 
@@ -75,8 +70,12 @@ export default class extends Controller {
       console.log(e.coords.latitude)
       console.log(e.coords.longitude)
 
-      this.userCoordinatesValue = [e.coords.longitude, e.coords.latitude];
-      this.#addItinerary();
+      if (this.userCoordinatesValue.length != 0) {
+        this.userCoordinatesValue = [e.coords.longitude, e.coords.latitude];
+
+        this.#addItinerary();
+        this.#fitMapToItinerary();
+      }
     });
   }
 
@@ -199,6 +198,15 @@ export default class extends Controller {
         .setPopup(popup)
         .addTo(this.map)
     });
+  }
+
+  #fitMapToItinerary() {
+    const bounds = [
+      this.messageCoordinatesValue,
+      this.userCoordinatesValue
+    ];
+
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   }
 
   #fitMapToMarkers() {

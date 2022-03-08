@@ -1,21 +1,21 @@
 <div class="bottomnavbar">
-  <div class="bottom-navbar-info">
-    <%= yield(:bottom_navbar_title) %>
-  </div>
-  <% if params[:action] != "new" %>
-    <div class="send_poner_btn">
-      <%= link_to new_message_path do %>
-      <%= image_tag "Logo-pour-effet-sautillement.png" %>
-      <% end %>
+    <div class="bottom-navbar-info">
+      <%= yield(:bottom_navbar_title) %>
     </div>
-  <% end %>
+    <% if params[:action] != "new" %>
+      <div class="send_poner_btn">
+        <%= link_to new_message_path do %>
+        <%= image_tag "Logo-pour-effet-sautillement.png" %>
+        <% end %>
+      </div>
+    <% end %>
 
-  <div class="dropdown">
-    <%= image_tag "#{current_user.first_name}_#{current_user.last_name}.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-      <%= link_to "Action", "#", class: "dropdown-item" %>
-      <%= link_to "Another action", "#", class: "dropdown-item" %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+    <div class="dropdown">
+      <%= image_tag "#{current_user.first_name}_#{current_user.last_name}.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        <%= link_to "Action", "#", class: "dropdown-item" %>
+        <%= link_to "Another action", "#", class: "dropdown-item" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      </div>
     </div>
-  </div>
 </div>

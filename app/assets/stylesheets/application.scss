@@ -3,7 +3,7 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 $topnavbar-height: 55px;
-$bottomnavbar-height: 80px;
+$bottomnavbar-height: 70px;
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -30,5 +30,6 @@ body{
   }
   .page-content {
     flex: 1;
+    min-height: calc(100vh - #{$topnavbar-height} - #{$bottomnavbar-height})
   }
 }
