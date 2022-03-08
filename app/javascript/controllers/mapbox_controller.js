@@ -122,7 +122,7 @@ export default class extends Controller {
         // Calculate the distance in kilometers between route start/end point.
         //const lineDistance = turf.length(route);
 
-        // calculer distance entre coord du message et coord du user
+        // calculer distance entre coord du message et coord du userr
         const line = turf.lineString(route);
         const distance = turf.length(line, {units: 'kilometers'})*1000;
         console.log(distance)
@@ -136,7 +136,6 @@ export default class extends Controller {
               Swal.fire({
                 html: data,
                 showConfirmButton: false,
-                showCancelButton: true,
                 customClass: {
                   container: 'swalpopup'
                 }
