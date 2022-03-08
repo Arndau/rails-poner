@@ -7,7 +7,7 @@
       <% end %>
 <% end %>
 <div class="message-show" style="background-image: <%#= cl_image_tag @message.photo %>url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/86/0e/caption.jpg?w=800&h=-1&s=1'); background-size: cover">
-
+<%# ne pas oublier de rappeler les classes lorsque l'on pourra voir les messages dans la show  %>
   <div class="message-show__title">
     <%= image_tag 'https://wpdaddy.com/wp-content/uploads/2020/11/thispersondoesnotexist-768x565.jpg', class: "avatar-bordered" %>
     <%#= cl_image_tag current_user.avatar.key, class: "avatar-bordered " %>
