@@ -1,5 +1,8 @@
 <%= content_for(:topnavbar_title) do %>
   You are <span class="addbackground"><%= pluralize(@unlocked_messages_counter, "new pone", "new pones") %></span> behind !
+  <%= link_to "#", class: "navbar-localisation" do %>
+      <%= image_tag "geoloc_symbol.png" %>
+    <% end %>
 <% end %>
 <%= content_for(:bottom_navbar_title) do %>
   <p class="locked_unlocked_info"><%=@unlocked_messages_counter%> Locked</p>
@@ -13,12 +16,12 @@
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 
   </div>
-  <%= link_to "#", class: "profile" do%>
+  <%#= link_to "#", class: "profile" do%>
     <div>
-      <%= image_tag "#{current_user.first_name}_#{current_user.last_name}.png",  class:'avatar-large'%>
-      <%= image_tag "Logo-pour-effet-sautillement.png", class:'logo-profile' %>
+      <%#= image_tag "#{current_user.first_name}_#{current_user.last_name}.png",  class:'avatar-large'%>
+      <%#= image_tag "Logo-pour-effet-sautillement.png", class:'logo-profile' %>
     </div>
-  <% end %>
+  <%# end %>
 
    <%= link_to message_users_path(locked: true), class: "btn btn-light btn-circle-secondary btn-lock" do %>
      <i class="fas fa-lock"></i>

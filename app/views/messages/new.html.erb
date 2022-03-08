@@ -1,4 +1,11 @@
-
+<%= content_for(:topnavbar_title) do %>
+Create your ponmessage 1/2
+<% end %>
+<%= content_for(:bottom_navbar_title) do %>
+<%= link_to message_users_path, class: "navbar-brand" do %>
+        <%= image_tag "exit_logo.png" %>
+      <% end %>
+<% end %>
 <div>
 <h1>MAP</h1>
 <br>
