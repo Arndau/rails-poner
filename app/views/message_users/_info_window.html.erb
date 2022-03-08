@@ -13,24 +13,29 @@
       <p>
         <%= icon('fas', 'calendar') %>
        <em>Posted :</em> <%= distance_of_time_in_words(Time.now, user_message.message.created_at) %> <em>ago</em>
-            <%= user_message.message.address %>
+    </p>
+  </div>
+  <div class="message-show__bubble-message">
+    <p class="message-content">
+      <% if user_message.unlocked? %>
+        <%= user_message.message.content %>
+      <% else %>
+        <%= icon('fas', 'flag') %>
+        <%= user_message.message.hint %>
+      <% end %>
     </p>
   </div>
 
+  <div class = "pin_icone">
+    <i class="fas fa-map-marker-alt"></i>
+  </div>
 
+  <div class="message-location">
+    <%= user_message.message.address %>
+  </div>
 
 
   <%#  <div class="bubble_messages"> %>
-    <div class="message-show__bubble-message">
-      <p class="message-content">
-        <% if user_message.unlocked? %>
-          <%= user_message.message.content %>
-        <% else %>
-          <%= icon('fas', 'flag') %>
-          <%= user_message.message.hint %>
-        <% end %>
-      </p>
-    </div>
     <% if !user_message.unlocked? %>
       <%= link_to "Itinéraire", itinerary_message_user_path(user_message), class: "btn btn-primary" %>
     <% end %>
