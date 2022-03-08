@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :messages, only: [:index, :new, :create, :destroy] do
+    resources :message_users, only: [:new, :create]
     #member do
       #get :itinerary
     #end

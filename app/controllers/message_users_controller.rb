@@ -46,6 +46,23 @@ class MessageUsersController < ApplicationController
     # @user_coordinates = [2.4064122, 48.8759685] # TODO: ask user for his coordinates (via JS)
   end
 
+  def new
+    @message_user = MessageUser.new
+    @message = Message.find(params[:message_id])
+    authorize @message_user
+  end
+
+  def create
+    @ids = params[:message][:recipient_ids]
+    @ids.shift
+    @ids.each do |id|
+      @message_user = MessageUser.create(message: Message.find(params[:message_id]), user: User.find(id.to_i))
+      authorize @message_user
+    end
+
+    redirect_to message_users_path
+
+  end
 
   def update
       @message_user.unlocked = true
