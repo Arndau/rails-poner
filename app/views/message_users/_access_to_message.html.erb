@@ -1,3 +1,21 @@
-<h1>You're all set !</h1>
-<%= link_to "Open up your poner here",  message_user_path(message_user), method: :patch %>
-<%#= link_to "Later",  message_users_path(message_user), method: :patch %>
+<div class="black_window">
+   
+    <div class="congrats">
+        <h1 >🎉 CONGRATS 🎉</h1>
+    </div>
+
+     <div class="congrats">
+        <p> Your Pon is now UNLOCKED !</p>
+    </div>
+
+     <div>
+        <%= link_to message_user_path(message_user), class: "btn btn-light btn-circle-secondary btn-play", method: :patch do %>
+            <i class="fas fa-play"></i>
+        <% end %>
+    </div>
+
+    <div>
+    <%= link_to "READ MESSAGE",  message_user_path(message_user), method: :patch %>
+    </div>
+</div>
+
