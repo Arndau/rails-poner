@@ -1,5 +1,70 @@
-.swalpopup {
-    background-color: black;
+.swal2-container.swal2-backdrop-show.swalpopup {
+  
+    .swal2-popup {
+        color: white;
+        width: 379px;
+        height: 650px;
+        left: 6px;
+        top: 149px;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 6px;
+        position: sticky;
+    }
+
+    
+    .btn-circle-secondary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 35px;
+        width: 70px;
+        height: 70px;
+        padding: 6px 0px;
+        border-radius: 50%;
+        background: #F19DE7;
+        border: 2px solid #FFFFFF;
+    }
+
+    .swalbutton {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .fas.fa-play {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .congrats {
+        height: 100px;
+        background: #F19DE7;
+        color: black;
+        font-weight: bolder;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 200px;
+        margin-top: 80px;
+        border: 4px solid #FFFFFF;
+        margin-left: 25px;
+        margin-right: 25px;
+
+    }
+
+    .hrefmessage {
+        color: white;
+        text-decoration: none;
+    }
+
+    .title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 33px;
+        line-height: 39px;
+        text-align: center;
+    }
+
 }
 
 

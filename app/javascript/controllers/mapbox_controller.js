@@ -136,11 +136,10 @@ export default class extends Controller {
             .then((data) => {
               Swal.fire({
                 html: data,
-                icon: "success",
                 showConfirmButton: false,
                 showCancelButton: true,
                 customClass: {
-                  container: 'swalpopup',
+                  container: 'swalpopup'
                 }
               });
               })
