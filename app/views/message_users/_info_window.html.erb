@@ -1,4 +1,9 @@
-<div class="message-show info-window" style="background-image: url(<%= user_message.unlocked? ? 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/86/0e/caption.jpg?w=800&h=-1&s=1' : ''  %>); background-size: cover">
+<% if user_message.unlocked? %>
+  <div class="message-show info-window message_unlocked" style="background-image: url(<%= user_message.unlocked? ? 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/86/0e/caption.jpg?w=800&h=-1&s=1' : ''  %>); background-size: cover">
+<% else %>
+  <div class="message-show info-window message_locked" style="background-image: url(<%= user_message.unlocked? ? 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/86/0e/caption.jpg?w=800&h=-1&s=1' : ''  %>); background-size: cover">
+<% end %>
+
 
   <div class="message-show__title">
     <% if  %>
@@ -13,7 +18,9 @@
   </div>
 
 
-  <div class="bubble_messages">
+
+
+  <%#  <div class="bubble_messages"> %>
     <div class="message-show__bubble-message">
       <p class="message-content">
         <% if user_message.unlocked? %>
@@ -27,7 +34,7 @@
     <% if !user_message.unlocked? %>
       <%= link_to "Itinéraire", itinerary_message_user_path(user_message), class: "btn btn-primary" %>
     <% end %>
-  </div>
+  <%#   </div> %>
 </div>
 
 

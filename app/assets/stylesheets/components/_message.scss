@@ -1,14 +1,30 @@
 // message unlocked
 
+.message_locked {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.message_unlocked {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .message-show {
   z-index: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  background-position: center;
-  background-size: contain;
-  padding-top: 70px;
-  padding-left: 19px;
+  //width: 100vw;
+  //height: 100vh;
+  //background-color: rgba(0, 0, 0, 0.600);
+  //background-position: center;
+  //background-size: contain;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-around;
+  // align-items: center;
 
 
   .avatar-bordered {
@@ -30,8 +46,11 @@
   align-items: center;
   width: fit-content;
   z-index: 11221;
-  width: 100%;
-  position: relative;
+  margin-top: 10%;
+  //width: 100%;
+  //position: relative;
+  //margin-left: -5%;
+  //margin-top: -13%;
 
   p {
     margin-bottom: 0;
@@ -44,11 +63,12 @@
   }
 }
 
-.bubble_messages {
-  position: absolute;
-  top: 130px;
-  left: 28px;
+//.bubble_messages {
+
   .message-show__bubble-message {
+//    position: absolute;
+//    top: 130px;
+//    left: 28px;
     display: flex;
     justify-content: flex-start;
     background-color: #fff;
@@ -58,13 +78,16 @@
     border-radius: 10px;
     box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
     width: 95vw;
-    margin-bottom: 15px;
+    margin-top: 10%;
+    //margin-bottom: 15px;
+    //margin-top: -10%;
+    //margin-left: -5%;
     p {
       margin-bottom: 0;
       font-size: 18px;
     }
   }
-}
+//}
 
 .message-content {
   position: relative;
