@@ -2,6 +2,8 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
+$topnavbar-height: 55px;
+$bottomnavbar-height: 80px;
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -18,4 +20,15 @@
 
 body{
   background-color: white;
+}
+
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  .topnavbar, .bottomnavbar {
+    flex: 0 0 auto;
+  }
+  .page-content {
+    flex: 1;
+  }
 }

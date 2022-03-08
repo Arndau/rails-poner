@@ -4,6 +4,7 @@ class Message < ApplicationRecord
 
   belongs_to :user
   has_many :message_users
+  has_many :recipients, through: :message_users, source: :user
   validates :hint, presence: true
   validates :address, presence: true
   has_rich_text :content
