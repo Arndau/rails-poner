@@ -30,17 +30,17 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
+    @message.user = current_user
+    authorize @message
     @message.save
 
-    redirect_to message_path(@message)
+    redirect_to new_message_message_user_path(@message)
   end
 
 
   def destroy
     @message.destroy
   end
-
-
 
   private
 
@@ -50,6 +50,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:hint, :address, :user_id)
+    params.require(:message).permit(:hint, :address, :user_id, :photo)
   end
 end

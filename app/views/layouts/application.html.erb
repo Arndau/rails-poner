@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+     <meta name="apple-mobile-web-app-capable" content="yes">
+     <meta name="mobile-web-app-capable" content="yes">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,18 +15,13 @@
   </head>
 
   <body>
-    <div>
-      <%= render 'shared/topnavbar' %>
+    <div class="page-layout">
+      <%= render 'shared/topnavbar' if params[:action] != "home"%>
+      <div class="page-content">
+        <%= yield %>
+      </div>
+      <%= render 'shared/bottomnavbar' if params[:action] != "home"%>
+      <%= render 'shared/flashes' %>
     </div>
-    <div>
-      <%= yield %>
-    </div>
-      <%= render 'shared/bottomnavbar' %>
-    <div>
-    </div>
-    <%= render 'shared/flashes' %>
-
-
-
   </body>
 </html>

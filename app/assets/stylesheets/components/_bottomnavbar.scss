@@ -1,4 +1,39 @@
 .bottomnavbar{
-  position: fixed;
-  bottom: 0;
+  height: $bottomnavbar-height;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  .bottom-navbar-info {
+    flex: 1 1 1%;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .send_poner_btn {
+    flex: 0 0 auto;
+    position: relative;
+    bottom: 50px;
+  }
+  .dropdown {
+    flex: 1 1 1%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+.bottom_navbar_content{
+  display: flex;
+}
+
+.send_poner_btn img {
+  height: 80px;
+  width:auto;
+  border: solid black;
+  border-radius: 50px;
+  box-shadow: 2 3 20px black;
+}
+
+.navbar-brand img{
+  height: 40px;
+  width: auto;
 }

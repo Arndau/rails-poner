@@ -2,11 +2,12 @@
   You are <span class="addbackground"><%= pluralize(@unlocked_messages_counter, "new pone", "new pones") %></span> behind !
 <% end %>
 <%= content_for(:bottom_navbar_title) do %>
-
+  <p class="locked_unlocked_info"><%=@unlocked_messages_counter%> Locked</p>
+  <p class="locked_unlocked_info"><%=@locked_messages_counter%> Unlocked</p>
 <% end %>
 
 <div class="map-container">
-  <div style="width: 100vw; height: 100vh;"
+  <div style="width: 100vw; height: 100%;"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
