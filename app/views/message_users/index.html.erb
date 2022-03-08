@@ -2,8 +2,8 @@
   You are <span class="addbackground"><%= pluralize(@unlocked_messages_counter, "new pone", "new pones") %></span> behind !
 <% end %>
 <%= content_for(:bottom_navbar_title) do %>
-  <p class="locked_unlocked_info"><%=@unlocked_messages_counter%> Locked</p>
-  <p class="locked_unlocked_info"><%=@locked_messages_counter%> Unlocked</p>
+  <p class="locked_unlocked_info"><span class="addbackgroundlocked">  <i class="fas fa-lock"></i><%=@unlocked_messages_counter%></span> Locked</p>
+  <p class="locked_unlocked_info"><span class="addbackgroundunlocked">  <i class="fas fa-play"></i><%=@locked_messages_counter%></span> Unlocked</p>
 <% end %>
 
 <div class="map-container">

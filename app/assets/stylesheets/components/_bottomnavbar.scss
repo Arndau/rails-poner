@@ -30,12 +30,13 @@
   display: flex;
 }
 
-.send_poner_btn img {
+.send_poner_btn {
   height: 80px;
   width:auto;
-  border: solid black;
   border-radius: 50px;
   box-shadow: 2 3 20px black;
+  color: #7BCFE0;
+  font-size: 78px;
 }
 
 .navbar-brand img{
@@ -45,4 +46,15 @@
 
 .bottom_navbar_content{
   padding-bottom: 0px;
+}
+
+.addbackgroundunlocked{
+  background-color: #FF97EA;
+}
+.addbackgroundlocked{
+  background-color: #FAE183;
+}
+
+.fa-plus:before {
+  color: #7BCDDF;
 }
