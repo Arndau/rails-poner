@@ -1,19 +1,23 @@
 .poner-popup {
   background-color: rgba(0,0,0,0.9);
-  top: 1em;
+  top: 8%;
   z-index: 500;
   transform: none !important;
-  bottom: 50px;
-  right: 1em;
-  left: 1em;
+  //bottom: 50px;
+  //right: 1em;
+  //left: 1em;
   border-radius: 10px;
-  position: unset;
+  position: absolute;
+  //margin-top: 50px;
+  height: 85%;
+  width: 100%;
   .mapboxgl-popup-content {
     background-color: transparent;
     height: 100%;
     padding: 0;
     .message-show.info-window {
       background-size: cover;
+      height: 100%;
     }
   }
 }
