@@ -128,7 +128,7 @@ export default class extends Controller {
         console.log(distance)
 
         // si la distance fait moins de m, alors je viens déclencher une modale
-        if (distance < 2000000) {
+        if (distance < 2) {
           const url = `/message_users/${this.messageUserIdValue}/access_to_message`
           fetch(url, { headers: { "Accept": "text/plain" } })
             .then(response => response.text())
