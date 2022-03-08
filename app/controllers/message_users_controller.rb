@@ -80,7 +80,7 @@ class MessageUsersController < ApplicationController
   end
 
   def show
-    @message = Message.find(params[:id])
+    @message = Message.find(@message_user.message_id)
     @sender_name = "#{@message.user.last_name} #{@message.user.first_name}"
   end
 
