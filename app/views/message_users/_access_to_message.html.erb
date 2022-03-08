@@ -1,21 +1,24 @@
-<div class="black_window">
-   
-    <div class="congrats">
-        <h1 >🎉 CONGRATS 🎉</h1>
-    </div>
+    <div class="title">🎉 CONGRATS 🎉</div>
 
-     <div class="congrats">
-        <p> Your Pon is now UNLOCKED !</p>
-    </div>
+    <p> <p>
 
-     <div>
-        <%= link_to message_user_path(message_user), class: "btn btn-light btn-circle-secondary btn-play", method: :patch do %>
-            <i class="fas fa-play"></i>
-        <% end %>
-    </div>
+        <div class="congrats">
+            <p> Your Pon is now UNLOCKED !</p>
+        </div>
 
-    <div>
-    <%= link_to "READ MESSAGE",  message_user_path(message_user), method: :patch %>
-    </div>
-</div>
+        <div class="blocswalread">
 
+            <div class="swalbutton">
+             <%= link_to message_user_path(message_user), class: "btn btn-light btn-circle-secondary btn-play", method: :patch do %>
+                    <i class="fas fa-play"></i>
+             <% end %>
+            </div>
+
+
+            <div class="read">
+                <%= link_to "READ MESSAGE",  message_user_path(message_user), class: "hrefmessage", method: :patch %>
+            </div>
+
+        </div>
+
+        
