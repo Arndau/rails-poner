@@ -1,8 +1,13 @@
 .bottomnavbar{
   height: $bottomnavbar-height;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0 1rem;
+  box-shadow: 0px -5px 25px 0px rgba(0,0,0,0.35);
+  background-color: white;
+
+
   .bottom-navbar-info {
     flex: 1 1 1%;
     p {
@@ -36,4 +41,8 @@
 .navbar-brand img{
   height: 40px;
   width: auto;
+}
+
+.bottom_navbar_content{
+  padding-bottom: 0px;
 }
