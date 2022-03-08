@@ -1,3 +1,11 @@
+<%= content_for(:topnavbar_title) do %>
+Create your ponmessage 2/2
+<% end %>
+<%= content_for(:bottom_navbar_title) do %>
+<%= link_to message_users_path, class: "navbar-brand" do %>
+        <%= image_tag "exit_logo.png" %>
+      <% end %>
+<% end %>
 <h4>SELECT YOUR PONFRIENDS</h4>
 <div class="p-2">
   <%= simple_form_for [@message, Message.new], url: message_message_users_path, method: :post do |f|  %>
