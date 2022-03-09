@@ -141,9 +141,9 @@ export default class extends Controller {
                     container: 'swalpopup'
                   }
                 });
-                })
+              })
             ;
-          }, 3000);
+          }, 15000);
         }
 
         this.itineraryLoaded = true;
