@@ -37,11 +37,11 @@
 
   <body>
     <div class="page-layout">
-      <%= render 'shared/topnavbar' if params[:action] != "home"%>
+      <%= render 'shared/topnavbar' if params[:action] != "home" && current_user %>
       <div class="page-content">
         <%= yield %>
       </div>
-      <%= render 'shared/bottomnavbar' if params[:action] != "home"%>
+      <%= render 'shared/bottomnavbar' if params[:action] != "home" && current_user %>
       <%= render 'shared/flashes' %>
     </div>
   </body>

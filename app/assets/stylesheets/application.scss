@@ -25,11 +25,13 @@ body{
 .page-layout {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
   .topnavbar, .bottomnavbar {
     flex: 0 0 auto;
   }
   .page-content {
     flex: 1;
-    min-height: calc(100vh - #{$topnavbar-height} - #{$bottomnavbar-height})
+    overflow-y: auto;
   }
 }
