@@ -58,7 +58,7 @@ end
 
 
 
-message1 = Message.create!(hint: "pettie surprise pour toi...", address: "16 villa Gaudelet", latitude: "48.865131", longitude: "2.379999", user: user2)
+message1 = Message.create!(hint: "petite surprise pour toi...", address: "16 villa Gaudelet", latitude: "48.865131", longitude: "2.379999", user: user2)
 message1.content = "Souvenir du Wagon !!!"
 message1.save
 message2 = Message.create!(hint: "ton restaurant préféré", address: "110 rue Oberkampf", latitude: "48.8659664", longitude: "2.3790391", user: user3)
@@ -88,7 +88,7 @@ message9.save
 message10 = Message.create!(hint: "Le lieu de tous nos débriefs !!", address: "121 Rue Oberkampf", latitude: "48.86587142944336", longitude: "2.377452850341797", user: user12)
 message10.content = "Ahh la place verte ! si on s'y retrouvait pour un verre bientôt ?"
 message10.save
-message11 = Message.create!(hint: "Le lieu de tous nos débriefs !!", address: "Avenue parmentier", latitude: "48.86587142944336", longitude: "2.377452850341797", user: user13)
+message11 = Message.create!(hint: "Le lieu de tous nos débriefs !!", address: "83 Rue Jean-Pierre Timbaud, 75011 Paris", latitude: "48.86587142944336", longitude: "2.377452850341797", user: user13)
 message11.content = "Ahh la place verte ! si on s'y retrouvait pour un verre bientôt ?"
 message11.save
 message12 = Message.create!(hint: "Le lieu de tous nos débriefs !!", address: "125 Rue Oberkampf", latitude: "48.86587142944336", longitude: "2.377452850341797", user: user14)
