@@ -1,0 +1,104 @@
+.locked-message {
+
+  text-align: center;
+
+  .swal2-popup {
+    color: white;
+    width: 379px;
+    height: 520px;
+    left: 6px;
+    top: 149px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 6px;
+    position: sticky;
+  }
+
+   .avatar-bordered {
+    // position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
+    border: white 2px solid;
+    vertical-align: middle;
+    // margin-top: -80px;
+   }
+
+   .congrats {
+    // position: absolute;
+    height: 60px;
+    background: #ffe173;
+    color: black;
+    font-size: 1.125em;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 4px;
+    border: 2px solid #FFFFFF;
+    // margin-left: 60px;
+    // top: 40px;
+  }
+
+  .locked-hint {
+    color: black;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 23px rgba(250, 225, 131, 0.28);
+    border-radius: 3px;
+    // position: absolute;
+    width: auto;
+    // height: 62px;
+    left: 59px;
+    top: 260px;
+  }
+
+
+  .pin_icone {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 50px;
+    align-items: center;
+    border: 1px solid;
+    position: absolute;
+    top: 300px;
+    left: 153px;
+
+    .locked-icon.fas.fa-map-marker-alt{
+      position: absolute;
+      width: 88px;
+      height: 88px;
+      left: 148px;
+      top: 374px;
+      background: #FAE183;
+      font-size: large;
+
+      // .fas.fa-map-marker-alt {
+      //   display: flex;
+      //   justify-content: center;
+      //   text-align: center;
+      //   // position: absolute;
+      //   // left: 44.36%;
+      //   // right: 45.81%;
+      //   // top: 48.46%;
+      //   // bottom: 45.24%;
+      //   border: 2px solid #000000;
+      // }
+    }
+  }
+
+  .message-location {
+    font-size: 20px;
+    color: white;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .hrefmessage {
+    color: white;
+    text-decoration: none;
+  }
+
+}

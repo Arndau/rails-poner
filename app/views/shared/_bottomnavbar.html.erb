@@ -5,7 +5,8 @@
     <% if params[:action] != "new" %>
       <div class="send_poner_btn">
         <%= link_to new_message_path do %>
-        <i class="fas fa-plus"></i>
+        <%= image_tag "Logo-pour-effet-sautillement.png", class:"logoplus" %>
+        <%# <i class="fas fa-plus"></i> %>
         <% end %>
       </div>
     <% end %>

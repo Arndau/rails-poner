@@ -16,15 +16,15 @@
 
 .message-show {
   z-index: 0;
-  //width: 100vw;
-  //height: 100vh;
-  //background-color: rgba(0, 0, 0, 0.600);
-  //background-position: center;
-  //background-size: contain;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-around;
-  // align-items: center;
+  width: 100vw;
+  height: 85vh;
+  background-color: rgba(0, 0, 0, 0.600);
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 
 
   .avatar-bordered {
@@ -47,19 +47,47 @@
   width: fit-content;
   z-index: 11221;
   margin-top: 10%;
-  //width: 100%;
-  //position: relative;
-  //margin-left: -5%;
-  //margin-top: -13%;
+  width: 100%;
+  position: relative;
+  margin-left: -3%;
+  margin-top: -45%;
+
 
   p {
     margin-bottom: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 5px 10px;
     border-radius: 10px;
     box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
     font-size: 18px;
     font-weight: bold;
+
+  }
+
+}
+
+.message-show__title_window {
+display: flex;
+text-align: center;
+justify-content: flex-start;
+align-items: center;
+width: fit-content;
+z-index: 11221;
+margin-top: 10%;
+width: 100%;
+position: relative;
+margin-left: 0%;
+margin-top: -140%;
+
+  p {
+    margin-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+    font-size: 18px;
+    font-weight: bold;
+
   }
 }
 
@@ -86,28 +114,62 @@
   }
 
   .message-show__bubble-message {
-//    position: absolute;
-//    top: 130px;
-//    left: 28px;
+    // position: absolute;
+    // top: 130px;
+    // left: 28px;
+    // display: flex;
+    // justify-content: flex-start;
+    // background-color: #fff;
+    // border: 1px solid rgba(0, 0, 0, 0.33);
+    // padding: 5px 10px;
+    // font-size: 1.25em;
+    // border-radius: 10px;
+    // box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+    // width: 95vw;
+    // margin-top: 10%;
+    // // margin-bottom: 15px;
+    // // margin-top: -10%;
+    // // margin-left: -5%;
+    position: absolute;
     display: flex;
     justify-content: flex-start;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.33);
     padding: 5px 10px;
     font-size: 1.25em;
     border-radius: 10px;
     box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
-    width: 95vw;
-    margin-top: 10%;
-    //margin-bottom: 15px;
-    //margin-top: -10%;
-    //margin-left: -5%;
+    width: 97vw;
+    margin-top: -405px;
+    margin-left: -188px;
+
+
     p {
       margin-bottom: 0;
       font-size: 18px;
     }
   }
-//}
+
+  .message-show__bubble-message_window {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.33);
+    padding: 5px 10px;
+    font-size: 1.25em;
+    border-radius: 10px;
+    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+    width: 97vw;
+    margin-top: -429px;
+    margin-left: -1px;
+
+    p {
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+  }
+
 
 .message-content {
   position: relative;
@@ -117,11 +179,28 @@
     position: absolute;
     width: 0;
     height: 0;
-    bottom: 100%;
+    bottom: 127%;;
     left: 0.5em;
     border: .75rem solid transparent;
     border-top: none;
-    border-bottom-color: #fff;
+    border-bottom-color: rgba(255, 255, 255, 0.8);
+    filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+  }
+}
+
+.message-content_window {
+  position: relative;
+  &:before {
+    // layout
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 112%;
+    left: 0.5em;
+    border: .75rem solid transparent;
+    border-top: none;
+    border-bottom-color: rgba(255, 255, 255, 0.8);
     filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
   }
 }
