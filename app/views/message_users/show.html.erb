@@ -6,11 +6,12 @@
         <%= image_tag "exit_logo.png" %>
       <% end %>
 <% end %>
-<div class="message-show" style="background-image: <%#= cl_image_tag @message.photo %>url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/86/0e/caption.jpg?w=800&h=-1&s=1'); background-size: cover">
-<%# ne pas oublier de rappeler les classes lorsque l'on pourra voir les messages dans la show  %>
+<div class="message-show" style="background-image: url('<%= cl_image_path @message.photo.key %>') ; background-size: cover">
+<%# url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/86/0e/caption.jpg?w=800&h=-1&s=1')%>
   <div class="message-show__title">
-    <%= image_tag 'https://wpdaddy.com/wp-content/uploads/2020/11/thispersondoesnotexist-768x565.jpg', class: "avatar-bordered" %>
-    <%#= cl_image_tag current_user.avatar.key, class: "avatar-bordered " %>
+    <%# <%= image_tag 'https://wpdaddy.com/wp-content/uploads/2020/11/thispersondoesnotexist-768x565.jpg', class: "avatar-bordered" %>
+    <%# <%= cl_image_tag "#{@message_user.message.user.first_name}_#{@message_user.message.user.last_name}.png", class:'avatar-bordered', alt:'avatar-bordered'%>
+    <%= cl_image_tag @message_user.message.user.photo.key, class: "avatar-bordered " %>
     <p>
       <%= @message_user.message.address %>
     </p>
