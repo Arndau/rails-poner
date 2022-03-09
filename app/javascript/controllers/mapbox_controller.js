@@ -66,9 +66,9 @@ export default class extends Controller {
     this.map.addControl(this.geolocate);
 
     this.geolocate.on('geolocate', (e) => {
-      console.log('user geolocated.');
-      console.log(e.coords.latitude)
-      console.log(e.coords.longitude)
+      // console.log('user geolocated.');
+      // console.log(e.coords.latitude)
+      // console.log(e.coords.longitude)
 
       if (this.userCoordinatesValue.length != 0) {
         this.userCoordinatesValue = [e.coords.longitude, e.coords.latitude];
@@ -128,19 +128,22 @@ export default class extends Controller {
         console.log(distance)
 
         // si la distance fait moins de m, alors je viens déclencher une modale
-        if (distance < 2) {
-          const url = `/message_users/${this.messageUserIdValue}/access_to_message`
-          fetch(url, { headers: { "Accept": "text/plain" } })
-            .then(response => response.text())
-            .then((data) => {
-              Swal.fire({
-                html: data,
-                showConfirmButton: false,
-                customClass: {
-                  container: 'swalpopup'
-                }
-              });
-              })
+        if (distance < 100) {
+          setTimeout(() => {
+            const url = `/message_users/${this.messageUserIdValue}/access_to_message`
+            fetch(url, { headers: { "Accept": "text/plain" } })
+              .then(response => response.text())
+              .then((data) => {
+                Swal.fire({
+                  html: data,
+                  showConfirmButton: false,
+                  customClass: {
+                    container: 'swalpopup'
+                  }
+                });
+                })
+            ;
+          }, 3000);
         }
 
         this.itineraryLoaded = true;
@@ -204,7 +207,7 @@ export default class extends Controller {
       this.userCoordinatesValue
     ];
 
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 20, duration: 0 });
   }
 
   #fitMapToMarkers() {

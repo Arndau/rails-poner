@@ -12,7 +12,13 @@
     flex: 1 1 1%;
     p {
       margin-bottom: 0;
+      padding: 0;
     }
+  }
+
+  .logoplus {
+    width: 90px;
+    height:auto;
   }
   .send_poner_btn {
     flex: 0 0 auto;
@@ -37,6 +43,7 @@
   box-shadow: 2 3 20px black;
   color: #7BCFE0;
   font-size: 78px;
+  vertical-align: auto;
 }
 
 .navbar-brand img{
@@ -57,4 +64,7 @@
 
 .fa-plus:before {
   color: #7BCDDF;
+  border: black;
+  width: 30px;
+  height: auto;
 }
