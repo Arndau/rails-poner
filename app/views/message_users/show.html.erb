@@ -3,10 +3,11 @@
 <% end %>
 <%= content_for(:bottom_navbar_title) do %>
   <%= link_to message_users_path, class: "navbar-brand" do %>
-        <%= image_tag "exit_logo.png" %>
-      <% end %>
+    <i class="fas fa-long-arrow-alt-left"></i>
+  <% end %>
 <% end %>
-<div class="message-show" style='background-image: url("<%= cl_image_path @message_user.message.photo.key if @message_user.message.photo_attachment %>") ; background-size: cover; '>
+
+<div class="message-show" style="background-image: url('<%= @message.photo.attached? ? cl_image_path(@message.photo.key) : "https://res.cloudinary.com/guillaumelevcloud/image/upload/v1646837372/caption_dm80mt.jpg" %>') ; background-size: cover">
 <%# url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/86/0e/caption.jpg?w=800&h=-1&s=1')%>
   <div class="message-show__title">
     <%# <%= image_tag 'https://wpdaddy.com/wp-content/uploads/2020/11/thispersondoesnotexist-768x565.jpg', class: "avatar-bordered" %>

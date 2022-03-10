@@ -23,15 +23,16 @@
   .send_poner_btn {
     flex: 0 0 auto;
     position: relative;
-    bottom: 30px;
-    width: 80px;
-    height: 80px;
+    bottom: 20px;
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
     background-color: white;
     text-align: center;
     padding: 3px;
     box-shadow: grey;
     box-shadow: 1px 3px 3px 1px rgba(0, 0, 255, 0.2);
+    padding: 10px;
   }
   .dropdown {
     flex: 1 1 1%;
@@ -42,7 +43,7 @@
 
   .position-new-text {
     position: relative;
-    bottom: 14px;
+    bottom: 12px;
   }
 
   h4 {
@@ -88,8 +89,12 @@
 }
 
 .fa-plus:before {
-  color: #7BCDDF;
-  border: black;
   width: 30px;
   height: auto;
+}
+
+.fa-long-arrow-alt-left:before {
+  content: "\f30a";
+  color: black;
+  font-size: 40px;
 }

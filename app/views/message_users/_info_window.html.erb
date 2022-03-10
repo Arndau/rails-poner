@@ -1,6 +1,7 @@
 <% unless user_message.unlocked? %>
 
-  <div class="message-show info-window message_locked" style="background-image: url(<%= user_message.unlocked? ? 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/86/0e/caption.jpg?w=800&h=-1&s=1' : ''  %>); background-size: cover">
+  <div class="message-show info-window message_locked" style="background-image: url(<%= user_message.unlocked? ? "https://res.cloudinary.com/guillaumelevcloud/image/upload/v1646837372/caption_dm80mt.jpg" : ''  %>); background-size: cover">
+
 
   <div class="locked-message">
     <%= cl_image_tag user_message.message.user.photo.key, class: "avatar-bordered " %>
