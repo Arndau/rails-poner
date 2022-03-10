@@ -56,3 +56,26 @@
     transform: scale(1);
   }
 }
+
+.list-ponfriends {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.messages-new{
+  display: flex;
+  flex-direction: column;
+  height: 82vh;
+  overflow: hidden;
+}
+
+.moving-list {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+
+trix-editor {
+  height: 30vh;;
+}
