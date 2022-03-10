@@ -14,7 +14,10 @@
     <%# <%= cl_image_tag "#{@message_user.message.user.first_name}_#{@message_user.message.user.last_name}.png", class:'avatar-bordered', alt:'avatar-bordered'%>
     <%= cl_image_tag @message_user.message.user.photo.key, class: "avatar-bordered " %>
     <p>
-      <%= @message_user.message.address %>
+      <i class="fas fa-map-marker-alt"></i>
+      <%= @message_user.message.address %> -
+        posted :
+      <%= time_ago_in_words(@message_user.message.created_at) %> ago
     </p>
   </div>
 
@@ -23,7 +26,9 @@
     <div class="message-show__bubble-message">
       <p class="message-content">
         <% if @message_user.unlocked? %>
+         <i class="fas fa-quote-left"></i>
           <%= @message_user.message.content %>
+          <i class="fas fa-quote-right"></i>
         <% else %>
           <%= icon('fas', 'flag') %>
           <%= @message_user.message.hint %>
