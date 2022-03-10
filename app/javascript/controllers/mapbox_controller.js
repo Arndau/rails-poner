@@ -143,7 +143,7 @@ export default class extends Controller {
                 });
               })
             ;
-          }, 15000);
+          }, 1000);
         }
 
         this.itineraryLoaded = true;
@@ -193,7 +193,7 @@ export default class extends Controller {
       const customMarker = document.createElement("div");
       customMarker.innerHTML = marker.html.trim();
 
-      const popup = new mapboxgl.Popup({maxWidth:'100%', anchor: 'top-left', className: "poner-popup"}).setHTML(marker.info_window)
+      const popup = new mapboxgl.Popup({maxWidth:'95%', anchor: 'top-left', className: "poner-popup"}).setHTML(marker.info_window)
       new mapboxgl.Marker(customMarker)
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)

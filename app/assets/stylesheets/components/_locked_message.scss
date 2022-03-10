@@ -1,3 +1,31 @@
+
+.message-show {
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.poner-popup {
+  margin-left: 9px;
+  margin-right: 9px;
+  border-radius: 6px;
+}
+
+.light_icone {
+  height: 50px;
+  width: 50px;
+  color: #FAE183;
+  position: absolute;
+  font-size: 35px;
+  top: 195px;
+}
+.h3 {
+  font-weight: bold;
+
+}
+
+
+
 .locked-message {
 
   text-align: center;
@@ -13,20 +41,29 @@
     position: sticky;
   }
 
+
+  .btn {
+    margin-bottom: 20px;
+  }
+
    .avatar-bordered {
     // position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
     border: white 2px solid;
     vertical-align: middle;
+    margin-top: 6px;
+    margin-left: -40px;
+    position: absolute;
+
     // margin-top: -80px;
    }
 
    .congrats {
     // position: absolute;
-    height: 60px;
+    height: 100px;
     background: #ffe173;
     color: black;
     font-size: 1.125em;
@@ -34,6 +71,8 @@
     padding: 10px;
     border-radius: 4px;
     border: 2px solid #FFFFFF;
+    padding-top: 35px;
+    margin-top: 55px;
     // margin-left: 60px;
     // top: 40px;
   }
@@ -52,7 +91,7 @@
 
 
   .pin_icone {
-    color: #fff;
+    color: #ffe173;
     display: flex;
     justify-content: center;
     border-radius: 50%;
@@ -62,8 +101,8 @@
     align-items: center;
     border: 1px solid;
     position: absolute;
-    top: 300px;
-    left: 153px;
+    top: 305px;
+    left: 145px;
 
     .locked-icon.fas.fa-map-marker-alt{
       position: absolute;
@@ -96,9 +135,16 @@
     border-radius: 6px;
   }
 
-  .hrefmessage {
+  .hrefmessage1 {
     color: white;
     text-decoration: none;
+    margin-top: 40px;
+  }
+
+  .hrefmessage2 {
+    color: white;
+    text-decoration: none;
+    margin-top: 130px;
   }
 
 }
