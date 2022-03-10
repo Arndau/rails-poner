@@ -6,10 +6,9 @@ class ApplicationController < ActionController::Base
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
-------ici, écrire le nom de domaine
 
   def default_url_options
-    { host: ENV["écrire_ici_le_nom_de_domaine"] || "localhost:3000" }
+    { host: ENV["Poner.io"] || "localhost:3000" }
   end
 
   private
