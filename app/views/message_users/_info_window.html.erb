@@ -1,32 +1,7 @@
-<% if user_message.unlocked? %>
-  <div class="message-show info-window message_unlocked" style="background-image: url(<%= user_message.unlocked? ? 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/86/0e/caption.jpg?w=800&h=-1&s=1' : ''  %>); background-size: cover">
-<% else %>
-  <div class="message-show info-window message_locked" style="background-image: url(<%= user_message.unlocked? ? 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/86/0e/caption.jpg?w=800&h=-1&s=1' : ''  %>); background-size: cover">
-<% end %>
+<% unless user_message.unlocked? %>
 
-<% if user_message.unlocked? %>
-  <div class="message-show__title_window">
-    <%# if  %>
-      <%# <%= image_tag 'https://wpdaddy.com/wp-content/uploads/2020/11/thispersondoesnotexist-768x565.jpg', class: "avatar-bordered" %>
-    <%# end %>
-    <%#= cl_image_tag current_user.avatar.key, class: "avatar-bordered " %>
-    <%= cl_image_tag user_message.message.user.photo.key, class: "avatar-bordered " %>
-      <p>
-        <%= icon('fas', 'calendar') %>
-       <em>Posted :</em> <%= distance_of_time_in_words(Time.now, user_message.message.created_at) %> <em>ago</em>
-    </p>
-  </div>
-  <div class="message-show__bubble-message_window">
-    <p class="message-content_window">
-      <%# <% if user_message.unlocked? %>
-        <%= user_message.message.content %>
-      <%# <% else %>
-        <%# <%= icon('fas', 'flag') %>
-        <%# <%= user_message.message.hint %>
-      <%# <% end %>
-    </p>
-  </div>
-<% else %>
+  <div class="message-show info-window message_locked" style="background-image: url(<%= user_message.unlocked? ? 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/86/0e/caption.jpg?w=800&h=-1&s=1' : ''  %>); background-size: cover">
+
   <div class="locked-message">
     <%= cl_image_tag user_message.message.user.photo.key, class: "avatar-bordered " %>
 
