@@ -24,6 +24,7 @@
 
 
 .locked-message {
+  width: 70%;
 
   text-align: center;
 
@@ -47,6 +48,7 @@
 
   .btn {
     margin-bottom: 20px;
+    width: 80% !important;
   }
 
    .avatar-bordered {
@@ -89,6 +91,7 @@
     background: #FFFFFF;
     box-shadow: 0px 1px 23px rgba(250, 225, 131, 0.28);
     border-radius: 3px;
+    font-size: 15px;
     // position: absolute;
     width: auto;
     // height: 62px;
@@ -133,7 +136,7 @@
   }
 
   .message-location {
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     border: 1px solid;
     padding: 10px;
