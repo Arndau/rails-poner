@@ -31,5 +31,11 @@ body{
   .page-content {
     flex: 1;
     min-height: calc(100vh - #{$topnavbar-height} - #{$bottomnavbar-height})
+
+  }
+
+  .page-content h4{
+    padding-top: 15px;
+    padding-left: 10px;
   }
 }

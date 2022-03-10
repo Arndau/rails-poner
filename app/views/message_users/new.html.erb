@@ -6,7 +6,7 @@ Create your Pon 2/2
         <%= image_tag "exit_logo.png" %>
       <% end %>
 <% end %>
-<h4>SELECT YOUR PONFRIENDS</h4>
+<h4>Select your ponfriends</h4>
 <div class="p-2">
   <%= simple_form_for [@message, Message.new], url: message_message_users_path, method: :post do |f|  %>
     <%= f.association :recipients, wrapper_html: {class:"list-users"}, label:"", as: :check_boxes, label_method: lambda { |recipient| "#{recipient.first_name} #{recipient.last_name}" } %>
