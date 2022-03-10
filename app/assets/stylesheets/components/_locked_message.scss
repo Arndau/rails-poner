@@ -41,6 +41,7 @@
   .title {
     font-weight: bold;
     font-size: 20px;
+    padding: 1em 0 0;
   }
 
 
@@ -91,8 +92,7 @@
     // position: absolute;
     width: auto;
     // height: 62px;
-    left: 59px;
-    top: 260px;
+ 
   }
 
 
@@ -107,9 +107,7 @@
     font-size: 50px;
     align-items: center;
     border: 1px solid;
-    position: absolute;
-    top: 305px;
-    left: 145px;
+  
 
     .locked-icon.fas.fa-map-marker-alt{
       position: absolute;
@@ -140,18 +138,25 @@
     border: 1px solid;
     padding: 10px;
     border-radius: 6px;
+    margin-bottom: 1em;
   }
 
   .hrefmessage1 {
     color: white;
     text-decoration: none;
     margin-top: 40px;
+    .title {
+      padding: 0;
+        }
   }
 
   .hrefmessage2 {
     color: white;
     text-decoration: none;
-    margin-top: 130px;
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
 }
