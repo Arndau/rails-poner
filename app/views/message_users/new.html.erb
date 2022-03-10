@@ -6,12 +6,19 @@ Create your Pon 2/2
     <i class="fas fa-long-arrow-alt-left"></i>
   <% end %>
 <% end %>
-<h4>SELECT YOUR PONFRIENDS</h4>
-<div class="p-2">
-  <%= simple_form_for [@message, Message.new], url: message_message_users_path, method: :post do |f|  %>
-    <%= f.association :recipients, wrapper_html: {class:"list-users"}, label:"", as: :check_boxes, label_method: lambda { |recipient| "#{recipient.first_name} #{recipient.last_name}" } %>
-    <div class='text-center'>
-      <%= f.submit "SEND YOUR PON", class: "btn text-center" %>
+
+<div class='messages-new'>
+  <div class='moving-list'>
+    <div class="list-ponfriends">
+      <h4><strong>Select Your Friends</strong></h4>
     </div>
+    <div class="p-2">
+      <%= simple_form_for [@message, Message.new], url: message_message_users_path, method: :post do |f|  %>
+        <%= f.association :recipients, wrapper_html: {class:"list-users"}, label:"", as: :check_boxes, label_method: lambda { |recipient| "#{recipient.first_name} #{recipient.last_name}" } %>
+    </div>
+  </div>
+  <div class='text-center'>
+    <%= f.submit "SEND YOUR PON", class: "btn text-center" %>
+  </div>
   <% end %>
 </div>
