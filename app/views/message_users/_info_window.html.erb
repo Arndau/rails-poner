@@ -8,10 +8,10 @@
     <p class="congrats"> <%= user_message.message.user.first_name %> <br>left a Pon for you 🎉</p>
 
   <div class="hrefmessage1">
-  <div class="light_icone">
+  <%# <div class="light_icone">
     <i class="fas fa-lightbulb"></i>
-  </div>
-    <h3>HINT</h3>
+  </div> %>
+    <h3 class="title">💡HINT💡</h3>
     <p class="locked-hint">
       <%= user_message.message.hint %>
     </p>
@@ -25,15 +25,11 @@
     <div class = "pin_icone">
       <i class="fas fa-map-marker-alt"></i>
     </div>
-    <h3>LOCATION</h3>
+    <h3 class="title">WAITING AT</h3>
     <div class="message-location">
       <%= user_message.message.address %>
     </div>
     </div>
-
-
-
-    <%= user_message.message.address %>
 
 
   </div>

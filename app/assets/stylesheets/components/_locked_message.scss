@@ -19,10 +19,7 @@
   font-size: 35px;
   top: 195px;
 }
-.h3 {
-  font-weight: bold;
 
-}
 
 
 
@@ -39,6 +36,11 @@
     background: rgba(0, 0, 0, 0.7);
     border-radius: 6px;
     position: sticky;
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 20px;
   }
 
 
@@ -76,6 +78,10 @@
     // margin-left: 60px;
     // top: 40px;
   }
+  .congratsbis {
+    font-size: 10px;
+    color: black;
+  }
 
   .locked-hint {
     color: black;
@@ -91,7 +97,8 @@
 
 
   .pin_icone {
-    color: #ffe173;
+    color: white;
+    background-color: #FAE183;
     display: flex;
     justify-content: center;
     border-radius: 50%;
