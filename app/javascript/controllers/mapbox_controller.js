@@ -128,7 +128,7 @@ export default class extends Controller {
         console.log(distance)
 
         // si la distance fait moins de m, alors je viens déclencher une modale
-        if (distance < 1000) {
+        if (distance < 500) {
           setTimeout(() => {
             const url = `/message_users/${this.messageUserIdValue}/access_to_message`
             fetch(url, { headers: { "Accept": "text/plain" } })
@@ -143,7 +143,7 @@ export default class extends Controller {
                 });
               })
             ;
-          }, 15000);
+          }, 5000);
         }
 
         this.itineraryLoaded = true;
