@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 ------ici, écrire le nom de domaine
 
   def default_url_options
-    { host: ENV["écrire_ici_le_nom_de_domaine"] || "localhost:3000" }
+    { host: ENV["Poner.io"] || "localhost:3000" }
   end
 
   private
