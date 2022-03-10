@@ -1,42 +1,18 @@
-<% if user_message.unlocked? %>
-  <div class="message-show info-window message_unlocked" style="background-image: url(<%=  user_message.message.photo.attached? ? cl_image_path(user_message.message.photo.key) : "https://res.cloudinary.com/guillaumelevcloud/image/upload/v1646837372/caption_dm80mt.jpg" %>); background-size: cover">
-<% else %>
-  <div class="message-show info-window message_locked">
-<% end %>
+<% unless user_message.unlocked? %>
 
-<% if user_message.unlocked? %>
-  <div class="message-show__title_window">
-    <%# if  %>
-      <%# <%= image_tag 'https://wpdaddy.com/wp-content/uploads/2020/11/thispersondoesnotexist-768x565.jpg', class: "avatar-bordered" %>
-    <%# end %>
-    <%#= cl_image_tag current_user.avatar.key, class: "avatar-bordered " %>
-    <%= cl_image_tag user_message.message.user.photo.key, class: "avatar-bordered " %>
-      <p>
-        <%= icon('fas', 'calendar') %>
-       <em>Posted :</em> <%= distance_of_time_in_words(Time.now, user_message.message.created_at) %> <em>ago</em>
-    </p>
-  </div>
-  <div class="message-show__bubble-message_window">
-    <p class="message-content_window">
-      <%# <% if user_message.unlocked? %>
-        <%= user_message.message.content %>
-      <%# <% else %>
-        <%# <%= icon('fas', 'flag') %>
-        <%# <%= user_message.message.hint %>
-      <%# <% end %>
-    </p>
-  </div>
-<% else %>
+  <div class="message-show info-window message_locked" style="background-image: url(<%= user_message.unlocked? ? "https://res.cloudinary.com/guillaumelevcloud/image/upload/v1646837372/caption_dm80mt.jpg" : ''  %>); background-size: cover">
+
+
   <div class="locked-message">
     <%= cl_image_tag user_message.message.user.photo.key, class: "avatar-bordered " %>
 
     <p class="congrats"> <%= user_message.message.user.first_name %> <br>left a Pon for you 🎉</p>
 
   <div class="hrefmessage1">
-  <div class="light_icone">
+  <%# <div class="light_icone">
     <i class="fas fa-lightbulb"></i>
-  </div>
-    <h3>HINT</h3>
+  </div> %>
+    <h3 class="title">💡HINT💡</h3>
     <p class="locked-hint">
       <%= user_message.message.hint %>
     </p>
@@ -50,15 +26,11 @@
     <div class = "pin_icone">
       <i class="fas fa-map-marker-alt"></i>
     </div>
-    <h3>LOCATION</h3>
+    <h3 class="title">WAITING AT</h3>
     <div class="message-location">
       <%= user_message.message.address %>
     </div>
     </div>
-
-
-
-    <%= user_message.message.address %>
 
 
   </div>

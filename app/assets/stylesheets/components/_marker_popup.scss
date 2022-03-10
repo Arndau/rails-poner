@@ -1,6 +1,6 @@
 .poner-popup {
   background-color: rgba(0,0,0,0.7);
-  top: 8%;
+  top: 5em;
   z-index: 500;
   transform: none !important;
   //bottom: 50px;
@@ -9,7 +9,6 @@
   border-radius: 10px;
   position: absolute;
   //margin-top: 50px;
-  height: 85%;
   width: 100%;
   .mapboxgl-popup-content {
     background-color: transparent;
@@ -17,6 +16,7 @@
     padding: 0;
     .message-show.info-window {
       background-size: cover;
+      padding: 1em 0 1.5em;
       height: 100%;
     }
   }
@@ -35,5 +35,11 @@
   width: unset;
   .bubble_messages .message-show__bubble-message{
     width: 100%;
+  }
+}
+
+.mapboxgl-marker{
+  a{
+    color:black
   }
 }

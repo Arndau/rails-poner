@@ -1,0 +1,33 @@
+.addbackground {
+  background-color: #FAE183;
+}
+.navbar-title {
+  padding-right: 40px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.topnavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $topnavbar-height;
+  padding:  0 1rem;
+  box-shadow: 0px 5px 25px 0px rgba(0,0,0,0.35);
+  img {
+    width: 100px;
+  }
+  // position: fixed;
+  // top: 0;
+  // right: 0;
+  // left:0
+}
+
+.navbar-localisation img {
+  height:40px;
+  width: auto;
+}
+
+.navbar-brand img {
+  height:55px;
+  width: auto;
+}

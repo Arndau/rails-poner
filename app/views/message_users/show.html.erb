@@ -6,6 +6,7 @@
     <i class="fas fa-long-arrow-alt-left"></i>
   <% end %>
 <% end %>
+
 <div class="message-show" style="background-image: url('<%= @message.photo.attached? ? cl_image_path(@message.photo.key) : "https://res.cloudinary.com/guillaumelevcloud/image/upload/v1646837372/caption_dm80mt.jpg" %>') ; background-size: cover">
 <%# url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/86/0e/caption.jpg?w=800&h=-1&s=1')%>
   <div class="message-show__title">
