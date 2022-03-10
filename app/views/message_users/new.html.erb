@@ -1,13 +1,15 @@
 <%= content_for(:topnavbar_title) do %>
-Create your Pon 2/2
+  Create your Pon 2/2
 <% end %>
 <%= content_for(:bottom_navbar_title) do %>
-<%= link_to message_users_path, class: "navbar-brand" do %>
-        <%= image_tag "exit_logo.png" %>
-      <% end %>
+  <%= link_to message_users_path, class: "navbar-brand" do %>
+    <%= image_tag "exit_logo.png" %>
+  <% end %>
 <% end %>
-<h4>Select your ponfriends</h4>
-<div class="p-2">
+
+<div class="messages-new container">
+  <h4>Select your ponfriends</h4>
+<div class="formulaire"></div>
   <%= simple_form_for [@message, Message.new], url: message_message_users_path, method: :post do |f|  %>
     <%= f.association :recipients, wrapper_html: {class:"list-users"}, label:"", as: :check_boxes, label_method: lambda { |recipient| "#{recipient.first_name} #{recipient.last_name}" } %>
     <div class='text-center'>

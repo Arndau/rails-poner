@@ -16,6 +16,7 @@ $bottomnavbar-height: 70px;
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "messages/index";
 
 
 body{
@@ -30,8 +31,10 @@ body{
   .topnavbar, .bottomnavbar {
     flex: 0 0 auto;
   }
+
   .page-content {
     flex: 1;
     overflow-y: auto;
   }
+
 }
