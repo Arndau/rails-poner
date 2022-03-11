@@ -6,7 +6,10 @@
     <i class="fas fa-long-arrow-alt-left"></i>
   <% end %>
 <% end %>
-
+ <%# <div class="info-wrapper">
+    <p><span data-mapbox-target="duration">-</span></p>
+    <p><span data-mapbox-target="distance">-</span></p>
+</div> %>
 <div class="map-container">
   <div style="width: 100vw; height: 100%;"
     data-controller="mapbox"
@@ -16,8 +19,8 @@
     data-mapbox-message-user-id-value="<%= @message_user.id %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     <div class="instructions">
-      <p class= infoitinerary><span data-mapbox-target="duration">-</span></p>
-      <p class= infoitinerary><span data-mapbox-target="distance">-</span></p>
+      <p class="infoitinerary mb-0"> <i class="fas fa-clock"> </i><span data-mapbox-target=" duration"> -</span></p>
+      <p class="infoitinerary mb-0"> <i class="fas fa-arrows-alt-h"> </i><span data-mapbox-target="distance"> -</span></p>
     </div>
     <div>
 
