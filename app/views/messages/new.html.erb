@@ -13,34 +13,24 @@ Create your Pon 1/2
   <%# data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
 <%# </div> %>
 
-<div class='messages-new'>
-  <div class='moving-list'>
-    <div class="container">
-      <div class="list-ponfriends">
-        <h4><strong>Create your Message<strong></h4>
-      </div>
-    <%= simple_form_for [ @message ] do |f| %>
-      <%# <%= f.input :address, label: false, placeholder:'Location' %>
-      <div class="formulaire">
-        <div class="formulaire-input">
-          <%= f.input :address,
-                  label: false,
-                  placeholder:'Location',
-                  input_html: { data: { geocoder_target: "address" }, class: "d-none"},
-                  wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] }, placeholder:'📍 Location'} %>
-          <%= f.input :hint, label: false, placeholder:' 💡 Your hint' %>
-        </div>
-        <div>
-          <%= f.input :content, as: :rich_text_area, label: false, placeholder:'✏️ Content' %>
-        </div>
-        <div>
-          <%= f.input :photo, label: '📷 Media', as: :file %>
-        </div>
-      </div>
+
+
+<div class="container">
+  <div class="list-ponfriends">
+    <h4><strong>Create your Message<strong></h4>
+  </div>
+  <%= simple_form_for [ @message ] do |f| %>
+    <%# <%= f.input :address, label: false, placeholder:'Location' %>
+    <%= f.input :address,
+            label: false,
+            placeholder:'Location',
+            input_html: { data: { geocoder_target: "address" }, class: "d-none"},
+            wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] }, placeholder:'📍 Location'} %>
+    <%= f.input :hint, label: false, placeholder:' 💡 Your hint' %>
+    <%= f.input :content, as: :rich_text_area, label: false, placeholder:'✏️ Content' %>
+    <%= f.input :photo, label: '📷 Media', as: :file %>
+    <div class='text-center'>
+      <%= f.submit "SELECT PONFRIENDS", class: "btn text-center" %>
     </div>
-  </div>
-  <div class='text-center'>
-    <%= f.submit "SELECT PONFRIENDS", class: "btn text-center" %>
-  </div>
   <% end %>
 </div>
