@@ -45,7 +45,6 @@
     margin-right: -16px;
     position: relative;
     border: 2px solid #FFFFFF;
-    top: -10px;
 
   }
 }
@@ -228,7 +227,9 @@ margin-top: -140%;
     margin-right: 0px;
     margin-bottom: 1em;
   }
-
+  .avatar-bordered {
+    top: -10px;
+  }
 
 
 }
