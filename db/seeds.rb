@@ -49,6 +49,8 @@ user33 = User.create!(email: "stephen@gmail.com", password: "123456", first_name
 user34 = User.create!(email: "tatsiana@gmail.com", password: "123456", first_name:"Tatsiana", last_name: "Trakhimets", pseudo:"Tati-tatsiana")
 user35 = User.create!(email: "thomas@gmail.com", password: "123456", first_name:"Thomas", last_name: "Voisin", pseudo:"TomVsn")
 user36 = User.create!(email: "vincent@gmail.com", password: "123456", first_name:"Vincent", last_name: "Orinel", pseudo:"Vincentlenoir")
+user37 = User.create!(email: "tamara@gmail.com", password: "123456", first_name:"Tamara", last_name: "De Gaetano", pseudo:"tamaradg")
+
 
 users = User.all
 users.each do |user|
@@ -118,7 +120,9 @@ message19.save
 message20 = Message.create!(hint: "Le lieu de tous nos débriefs !!", address: "105 Rue Oberkampf", latitude: "48.86587142944336", longitude: "2.377452850341797", user: user22)
 message20.content = "Ahh la place verte ! si on s'y retrouvait pour un verre bientôt ?"
 message20.save
-
+message21 = Message.create!(hint: "Un peu de courage pour cette DemoDay", address: "16 villa gaudelet", latitude: "48.86487224057384", longitude: "2.3797483921518188", user: user37)
+message21.content = "Regarde derrière la plante de Akagreen"
+message21.save
 
 message_user1 = MessageUser.create!(unlocked: false, read: true, message: message1, user: user1)
 message_user1 = MessageUser.create!(unlocked: true, read: true, message: message2, user: user1)
@@ -143,3 +147,4 @@ message_user1 = MessageUser.create!(unlocked: true, read: true, message: message
 message_user1 = MessageUser.create!(unlocked: true, read: true, message: message18, user: user1)
 message_user1 = MessageUser.create!(unlocked: false, read: true, message: message19, user: user1)
 message_user1 = MessageUser.create!(unlocked: false, read: true, message: message20, user: user1)
+message_user1 = MessageUser.create!(unlocked: false, read: true, message: message21, user: user1)
