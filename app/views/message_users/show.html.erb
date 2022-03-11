@@ -27,7 +27,6 @@
         <% if @message_user.unlocked? %>
          <i class="fas fa-quote-left"></i>
           <%= @message_user.message.content %>
-          <i class="fas fa-quote-right"></i>
         <% else %>
           <%= icon('fas', 'flag') %>
           <%= @message_user.message.hint %>
